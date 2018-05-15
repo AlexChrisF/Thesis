@@ -1,25 +1,22 @@
 \include{preamble}
 
-% (Vor-) Definition von Einträgen für Stichwort-, Abkürzungs- und Symbolverzeichnis
-% Diese Befehle können auch mitten im Dokument benutzt werden
-\newglossaryentry{glo:POJO}{name={Plain Old Java Object}, description={Begriff für ein einfaches Java Object}}
-\newglossaryentry{glo:JRE}{name={Java Runtime Environment}, description={Die Java Laufzeitumgebung wird benötigt um Java Programme auszuführen}}
-\newglossaryentry{glo:JDK}{name={Java Development Kit}, description={Das Java Development Kit wird benötigt um Java Programme zu übersetzen}}
-\glsadd{glo:POJO} % Eintrag aufnehmen obwohl nicht explizit referenziert
-\glsadd{glo:JRE}
-\glsadd{glo:JDK}
-
-\newacronym{acr:JS}{POJO}{JavaScript}
-\newacronym{acr:JRE}{JRE}{Java Runtime Environment}
-\newacronym{acr:JDK}{JDK}{Java Development Kit}
-\glsadd{acr:POJO}
-\glsadd{acr:JRE}
-\glsadd{acr:JDK}
-
-\newglossaryentry{sym:x}{name={$x$}, description={Eine ganzzahlige Variable, die das Ergebnis einer Berechnung darstellt}, sort=symbolpi, type=symbolslist}
-\newglossaryentry{sym:y}{name={$y$}, description={Eine ganzzahlige Variable, die als Parameter für eine Berechnung dient}, sort=symbolpi, type=symbolslist}
-\glsadd{sym:x}
-\glsadd{sym:y}
+% Abkuerzungen
+\newacronym{JS}{JS}{Justus-Liebig-Universita?t}
+\newacronym{hrz}{HRZ}{Hochschulrechenzentrum}
+\newacronym[plural=LEDs, longplural={light-emitting diodes}]%
+{led}{LED}{light-emitting diode}
+\newacronym[plural=EEPROMs, longplural={electrically erasable %
+	programmable read-only memories}]{eeprom}{EEPROM}%
+{electrically erasable programmable read-only memory}
+%  Glossareintraege
+\newglossaryentry{culdesac}{name=cul-de-sac, %
+	description={passage or street closed at one end}, %
+	plural=culs-de-sac}
+\newglossaryentry{elite}{name={e?}lite, %
+	description={select group or class}, sort=elite}
+\newglossaryentry{elitism}{name={e?}litism, %
+	description={advocacy of dominance by an \gls{elite}}, %
+	sort=elitism}
 
 % Beginn des eigentlichen Dokuments
 
