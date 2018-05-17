@@ -77,7 +77,7 @@ Actions that do not change the DOM should be able to run asynchronously. That ma
 
 How is it possible that JavaScript offers the opportunity to run code concurrently, even though it is single threaded? The following example how multi-threading is implemented in JavaScript.
 
-Every time a function in \gls{JS} is called, it is put on the call stack. The result of that function is popped out from stack. 
+Every time a function in \gls{JS} is called, it is put on the call stack. The result of that function is popped out from stack. The functions on stack are executed synchronously one after another.
 
 \begin{figure}[H]
 	\centering
@@ -86,21 +86,50 @@ Every time a function in \gls{JS} is called, it is put on the call stack. The re
 	\label{fig:JS}
 \end{figure}
 
+To execute code concurrently JavaScript needs to call the Web API, provided by the browser. The web browser is written in C++, so it fully supports multi-threading.
 
-The browser offer APIS to execute code concurrently, it can do that because web browsers are written in C++, which offers full multi-threading support. The concrete implementation of concurrency in JavaScript shall be explained in the following.
+The Web API is called with a function that needs to be executed and a callback.
+The callback tells what to do after the asynchronous function finished executing. It is mandatory to provide a callback with each asynchronous function.
 
-For executing concurrently JavaScript takes adavantage of the Web API, it calles the API with the function to be executed 
+Once the thread finished executing it passes the callback to as so called Callback Que. The Callback Que is a simple list with all callbacks that need to be executed. 
+
+Further an event loop is responsible for checking if current stack is empty, if that's the case, the callback is put on stack and executed synchronously. The decoupling of the caller from the response allows for JavaScript to do other things while waiting for asynchronous operations to complete and their callbacks to fire. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{bilder/grundlagen/Concurrency.png}
+	\caption{Github Repositories sorted after used language} source:\cite{JS}
+	\label{fig:JS}
+\end{figure}
+
+\subsection{Functional Programming Paradigm}
+There is no need to use functional programming in JavaScript, since this is more a philosophy question and definitely nothing somebody needs to do when programming in JavaScript.Other ways of coding, like object oriented programming, are supported in JavaScript as well. This section shall explain what functional programming is and how it is implemented in JavaScript. No global variables or states are used in functional programming, the output of a function only depends on the input arguments.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{bilder/grundlagen/fp.png}
+	\caption{Github Repositories sorted after used language} source:\cite{JS}
+	\label{fig:JS}
+\end{figure}
+
+Another concept is the use of high-order functions. Giving the possibility to use functions as inputs and outputs. 
 
 
-For executing code asynchronously JavaScript provides so called callbacks. 
-A callback is executed once the function, the callback is attached to, finished executing. The following example shall further demonstrate how concurrency in JavaScript works. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{bilder/grundlagen/fp1.png}
+	\caption{Github Repositories sorted after used language} source:\cite{JS}
+	\label{fig:JS}
+\end{figure}
 
-As the name is already revealing, a callback is called once an asynchronous function finished executing. This passed back callback will be put on the stack and normally be called in a synchronous way. What happens exactly is that JavaScript passes the function and the regarding callback to Web APi after running it the callback with the result  is passed to the task que, the event loop then checks if the stack is free and puts the callback on top of stack.The decoupling of the caller from the response allows for the JavaScript runtime to do other things while waiting for your asynchronous operation to complete and their callbacks to fire.
+Data mutation shall be avoided.
 
-
-
-
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{bilder/grundlagen/fp2.png}
+	\caption{Github Repositories sorted after used language} source:\cite{JS}
+	\label{fig:JS}
+\end{figure}
 
 
 
