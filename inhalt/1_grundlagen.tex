@@ -223,7 +223,14 @@ A dispatcher has no real intelligence of its own, it only provides a simple mech
 
 This becomes more important when big applications shall be built. The dispatcher then handles dependencies between different stores, he takes care of updating the different stores in a specific order.
 
+\subsubsection{Stores}
+Stores contain the application's logic and sates. This role can be considered somehow similar to a model in the traditional MVC,the difference is that stores manage the data of many objects and not a single record of data like ORM models do. They manage the application state for a whole domain. 
 
-Stores contain the application's logic and sates.
+For example Facebook's Lookback Video Editor utilized a TimeStore that kept track of the playback time position and the playback state. On the other hand, the same application's ImageStore kept track of a collection of images.
+
+
+
+
+
 
 
