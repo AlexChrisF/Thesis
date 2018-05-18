@@ -13,7 +13,7 @@ The following analysis shall show why Java Script is in many ways superior for w
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{bilder/grundlagen/jsUsage.png}
-	\caption{Github Repositories sorted after used language} source:\cite{JS}
+	\caption{Github Repositories using JavaScript} source:\cite{JS}
 	\label{fig:JS}
 \end{figure}
 
@@ -193,6 +193,8 @@ React tries to get rid of that by introducing a different architecture called Fl
 
 \subsection{Flux}
 
+\subsubsection{Structure and Data Flow}
+
 In Flux data flows in a single direction, the unidirectional data flow is central to Flux. Dispatcher, stores and views are independent nodes with different inputs and outputs. The actions simply consist of objects with the new data.
 
 
@@ -215,8 +217,8 @@ It is also possible that a view generates an action, this happens mainly through
 	\label{fig:JS}
 \end{figure}
 
-
-The dispatcher can be considered as the central hub that is managing all data flows in a Flux application.
+\subsubsection{Dispatchers}
+Dispatchers can be considered as a central hub that is managing all data flows in a Flux application.
 
 The only way to change data, is through actions the dispatcher is providing.
 A dispatcher has no real intelligence of its own, it only provides a simple mechanism to distribute action over several stores.
@@ -228,9 +230,17 @@ Stores contain the application's logic and sates. This role can be considered so
 
 For example Facebook's Lookback Video Editor utilized a TimeStore that kept track of the playback time position and the playback state. On the other hand, the same application's ImageStore kept track of a collection of images.
 
+\subsubsection{Views and Conroller-Views}
+
+In react all views are composable and freely re-renderable. at the top of each view, the highest in hierarchy, there is a view that listens to events that are sent by the store. It is called a controller-view. 
+
+The controller-view fetches the data from store and passes it down to all descendants, causing a re-rendering of that views. Often the entire state of a store is passed down a chain of views allowing each descendant to take what he needs.
+
+\subsubsection{Actions}
+As already mentioned action change the store . Each action has payload with new data, every time an action occurs a dispatch is triggered to the stores.
+User-interaction is not the only of actions, it can also come from other places like the server.
 
 
-
-
-
+\subsubsection{Conclusion}
+The Flux architecture is improving data consistency, it offers better possibilities to debug. The unidirectional data flow makes that much easier. Since one can always follow the flow of actions.Furthermore with having the state and all the logic that is updatitng the state at one place  it is also possible to do more meaningful unit tests.
 
