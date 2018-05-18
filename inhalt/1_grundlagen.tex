@@ -200,8 +200,8 @@ In Flux data flows in a single direction, the unidirectional data flow is centra
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{bilder/grundlagen/uni.png}
-	\caption{Github Repositories sorted after used language} source:\cite{JS}
-	\label{fig:JS}
+	\caption{Flux Software Architecture} source:\cite{FLUX}
+	\label{fig:FLUX}
 \end{figure}
 
 The dispatcher takes care of handling all actions and forwarding it to the right store. The store holds the data and actions to change this data. Once data was changed the store alerts all views that are affected by this data change, causing a re-rendering.
