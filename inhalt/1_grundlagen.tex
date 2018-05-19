@@ -231,7 +231,7 @@ For example Facebook's Lookback Video Editor utilized a TimeStore that kept trac
 
 \subsubsection{Views and Conroller-Views}
 
-In react all views are composable and freely re-renderable. at the top of each view, the highest in hierarchy, there is a view that listens to events that are sent by the store. It is called a controller-view. 
+In React all views are composable and freely re-renderable. at the top of each view, the highest in hierarchy, there is a view that listens to events that are sent by the store. It is called a controller-view. 
 
 The controller-view fetches the data from store and passes it down to all descendants, causing a re-rendering of that views. Often the entire state of a store is passed down a chain of views allowing each descendant to take what he needs.
 
@@ -242,4 +242,50 @@ User-interaction is not the only of actions, it can also come from other places 
 
 \subsubsection{Conclusion}
 The Flux architecture is improving data consistency, it offers better possibilities to debug. The unidirectional data flow makes that much easier. Since one can always follow the flow of actions.Furthermore with having the state and all the logic that is updatitng the state at one place  it is also possible to do more meaningful unit tests.
+
+\section{React and Flux}
+This section is about analyzing how React is implementing the Flux Software Architecture. React depends on encapsulated components that manage their own state. 
+
+Components are written in JavaScript, so data can easily passed through the Application. Everything that needs to be rendered is still written in HTML. Each component has it's own controllers, there is no more discrimination between what is shown in the Browser and business logic.
+
+There are no separated HTML and JavaScript Files, only JavaScript. Every component is fully standalone and testable by it's own. This make React scalable and easy to test, there are no cascading dependencies. Every time the state of a component changes, the render function is called and the HTML is re-rendered with the changed data. Components can be nested, e.g. a board game that has consists of squares.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{bilder/grundlagen/Component.png}
+	\caption{Component} source:\cite{Component}
+	\label{fig:COMPONENT}
+\end{figure}
+
+
+Each of that squares is a component and part of the whole board game application. There shall bee a value assigned to the squares, values are passed through the squares shall be assigned a value, values are passed through the prop value.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{bilder/grundlagen/Component2.png}
+	\caption{Component} source:\cite{Component}
+	\label{fig:COMPONENT}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{bilder/grundlagen/Component3.png}
+	\caption{Component} source:\cite{Component}
+	\label{fig:COMPONENT}
+\end{figure}
+
+Now when clicked on a square he square shall show the 'X' , the value can now be considered a local state since changes over time and is definitely a private part of the square. First an initial state needs to be added.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{bilder/grundlagen/Component4.png}
+	\caption{Component} source:\cite{Component}
+	\label{fig:COMPONENT}
+\end{figure}
+
+If this.setState is called, an update is scheduled by React and the value is merged in the correct component state. And the component and all it's descendants are re-rendered. If a Square was clicked it would now show the 'X' in the grid.
+
+
 
