@@ -140,3 +140,53 @@ toc,          % In Inhaltsverzeichnis aufnehmen
 \usepackage{float}
 \usepackage{listings}
 
+
+\lstdefinelanguage{JavaScript}{
+	morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	morecomment=[s]{/*}{*/},
+	morecomment=[l]//,
+	morestring=[b]",
+	morestring=[b]'
+}
+
+
+\lstset{%
+	% Basic design
+	backgroundcolor=\color{editorGray},
+	basicstyle={\small\ttfamily},   
+	frame=l,
+	% Line numbers
+	xleftmargin={0.75cm},
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberfirstline=true,
+	% Code design   
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{blue}\ttfamily,
+	ndkeywordstyle=\color{editorGreen}\bfseries,
+	stringstyle=\color{editorOcher},
+	% Code
+	language=HTML5,
+	alsolanguage=JavaScript,
+	alsodigit={.:;},
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	breaklines=true,        
+	% Support for German umlauts
+	literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
+
+
+
+
