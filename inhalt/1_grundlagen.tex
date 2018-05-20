@@ -250,12 +250,7 @@ Components are written in JavaScript, so data can easily passed through the Appl
 
 There are no separated HTML and JavaScript files, only JavaScript. Every component is fully standalone and testable by its own. This makes React scalable and easy to test. There are no cascading dependencies. Every time the state of a component changes, the render function is called and the HTML is re-rendered with the changed data. Components can be nested, e.g. a board game that consists of squares.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8 \textwidth]{bilder/grundlagen/Component.png}
-	\caption{Component} source:\cite{Component}
-	\label{fig:COMPONENT}
-\end{figure}
+\lstinputlisting{code/grundlagen/Component.js}
 
 
 Each of that squares is a component and part of the whole board game application. There shall bee a value assigned to the squares, values are passed through the prop value.
