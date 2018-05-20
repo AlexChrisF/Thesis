@@ -148,6 +148,25 @@ toc,          % In Inhaltsverzeichnis aufnehmen
 \usepackage{upquote}
 
 
+\lstdefinelanguage{HTML5}{
+	language=html,
+	sensitive=true, 
+	otherkeywords={
+		% HTML tags
+		<html>, <head>, <title>, </title>, <meta, />, </head>, <body>,
+		<canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, <canvas> ><
+	},  
+	ndkeywords={
+		% General
+		=,
+		% HTML attributes
+		charset=, id=, width=, height=,
+		% CSS properties
+		border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
+	},  
+	morecomment=[s]{<!--}{-->},
+	tag=[s]
+}
 
 
 \lstdefinelanguage{JavaScript}{
@@ -160,7 +179,6 @@ toc,          % In Inhaltsverzeichnis aufnehmen
 
 \lstset{%
 	% Basic design
-	backgroundcolor=\color{editorGray},
 	basicstyle={\small\ttfamily},   
 	frame=l,
 	% Line numbers
