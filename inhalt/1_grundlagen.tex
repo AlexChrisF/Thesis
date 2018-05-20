@@ -258,16 +258,12 @@ Each of that squares is a component and part of the whole board game application
 \lstinputlisting{code/grundlagen/ComponentWithProps.js}
 
 
-
-
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.1]{bilder/grundlagen/GameGrid.png}
-	\caption{The logo for the React open source JavaScript library} source:\cite{ReactLogo}
+	\includegraphics[scale=0.8]{bilder/grundlagen/GameGrid.png}
+	\caption{Grid with numbers} source:\cite{ReactLogo}
 	\label{fig:RL}
 \end{figure}
-
-
 
 Now when clicked on a square, this square shall show the 'X'. The value can now be considered a local state, it is definitely a private part of the square. First an initial state needs to be added.
 
@@ -278,7 +274,7 @@ If this.setState is called, an update is scheduled by React and the value is mer
 \subsubsection{Lifting State Up}
 Often data needs to be aggregated from multiple child components. Then it makes sense to lift all states up to the parent component. The parent component then passes down the individual states for the child components.
 
-E.g. in a Tic Tac Toe game, to determine who has won, the value of all square components would need to be checked. That is technically doable but a better approach is to save all states in the parent component and the parent component can simply check one array in order to determine who has won. 
+E.g. in a Tic Tac Toe game, to determine who has won, the value of all squares components would need to be checked. That is technically doable, but a better approach is to save all states in the parent component and the parent component can simply check one array, in order to determine who has won. 
 
 The Square component is no longer keeping its own state, it receives the value from its parent Board. It informs the parent when it was clicked. These components are called controlled components. 
 
