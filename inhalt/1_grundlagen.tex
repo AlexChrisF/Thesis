@@ -252,7 +252,7 @@ There are no separated HTML and JavaScript Files, only JavaScript. Every compone
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.6]{bilder/grundlagen/Component.png}
+	\includegraphics[width=0.8 \textwidth]{bilder/grundlagen/Component.png}
 	\caption{Component} source:\cite{Component}
 	\label{fig:COMPONENT}
 \end{figure}
@@ -262,7 +262,7 @@ Each of that squares is a component and part of the whole board game application
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{bilder/grundlagen/Component2.png}
+	\includegraphics[width=0.8 \textwidth]{bilder/grundlagen/Component2.png}
 	\caption{Component} source:\cite{Component}
 	\label{fig:COMPONENT}
 \end{figure}
@@ -271,7 +271,7 @@ Each of that squares is a component and part of the whole board game application
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{bilder/grundlagen/Component3.png}
+	\includegraphics[scale=0.5]{bilder/grundlagen/Component3.png}
 	\caption{Component} source:\cite{Component}
 	\label{fig:COMPONENT}
 \end{figure}
@@ -280,12 +280,27 @@ Now when clicked on a square he square shall show the 'X' , the value can now be
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{bilder/grundlagen/Component4.png}
+	\includegraphics[width= \textwidth]{bilder/grundlagen/Component4.png}
 	\caption{Component} source:\cite{Component}
 	\label{fig:COMPONENT}
 \end{figure}
 
-If this.setState is called, an update is scheduled by React and the value is merged in the correct component state. And the component and all it's descendants are re-rendered. If a Square was clicked it would now show the 'X' in the grid.
+If this.setState is called, an update is scheduled by React and the value is merged in the correct component state. Furthermore the component and all of it's descendants are re-rendered. If a Square was clicked it would now show a 'X' in the grid.
+
+\subsubsection{Lifting State Up}
+If data needs to be aggregated from multiple child components it makes sense to lift all states up from the child to the parent, the parent then passes down the individual states for the child components. E.g. in a Tic Tac Toe game to determine who has won the game without aggregating the data the state of each
+
+
+
+
+
+
+
+Virtual DOM
+
+
+
+
 
 
 
