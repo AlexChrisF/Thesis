@@ -258,7 +258,7 @@ There are no separated HTML and JavaScript files, only JavaScript. Every compone
 \end{figure}
 
 
-Each of that squares is a component and part of the whole board game application. There shall bee a value assigned to the squares, values are passed through the squares shall be assigned a value, values are passed through the prop value.
+Each of that squares is a component and part of the whole board game application. There shall bee a value assigned to the squares, values are passed through the prop value.
 
 \begin{figure}[H]
 	\centering
@@ -276,7 +276,7 @@ Each of that squares is a component and part of the whole board game application
 	\label{fig:COMPONENT}
 \end{figure}
 
-Now when clicked on a square he square shall show the 'X' , the value can now be considered a local state since changes over time and is definitely a private part of the square. First an initial state needs to be added.
+Now when clicked on a square, this square shall show the 'X'. The value can now be considered a local state, it is definitely a private part of the square. First an initial state needs to be added.
 
 \begin{figure}[H]
 	\centering
@@ -285,14 +285,14 @@ Now when clicked on a square he square shall show the 'X' , the value can now be
 	\label{fig:COMPONENT}
 \end{figure}
 
-If this.setState is called, an update is scheduled by React and the value is merged in the correct component state. Furthermore the component and all of it's descendants are re-rendered. If a Square was clicked it would now show a 'X' in the grid.
+If this.setState is called, an update is scheduled by React and the value is merged in the correct component state. Furthermore the component and all of its descendants are re-rendered. If a Square was clicked it would now show a 'X' in the grid.
 
 \subsubsection{Lifting State Up}
-Often data needs to be aggregated from multiple child components. Then makes sense to lift all states up from to the parent component, the parent component then passes down the individual states for the child components.
+Often data needs to be aggregated from multiple child components. Then it makes sense to lift all states up to the parent component. The parent component then passes down the individual states for the child components.
 
 E.g. in a Tic Tac Toe game, to determine who has won, the value of all square components would need to be checked. That is technically doable but a better approach is to save all states in the parent component and the parent component can simply check one array in order to determine who has won. 
 
-The Square component is no longer keeping its own state, it receives the value from its parent Board and informs the parent when it was clicked. These components are called controlled components. 
+The Square component is no longer keeping its own state, it receives the value from its parent Board. It informs the parent when it was clicked. These components are called controlled components. 
 
 \begin{figure}[H]
 	\centering
@@ -302,9 +302,25 @@ The Square component is no longer keeping its own state, it receives the value f
 \end{figure}
 
 
+\subsubsection{Virtual DOM}
 
+Manipulating the DOM is the main thing modern, interactive web applications do. Unfortunately it is a lot slower than running JavaScript. The HTML DOM is always tree structured, which makes it easy to traverse through it, but it also offers poor performance.
 
-Virtual DOM
+Additionally some modern frameworks update the DOM more often than it needs to be updated. For example changing one item in a list of ten items would lead to re-rendering all ten items. React is addressing this problem by introducing a virtual DOM.
+
+The Virtual DOM is an exact representation of the HTML DOM with JavaScript. Once states have changed the virtual DOM is updated first, then the previous Virtual DOM is compared to the current Virtual DOM. Only what is different will be updated in the HTML DOM.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7 \textwidth]{bilder/grundlagen/VirtualDom.png}
+	\caption{Virtual DOM Camparison} source:\cite{Component}
+	\label{fig:COMPONENT}
+\end{figure}
+
+\newpage
+
+\subsubsection{Redux}
+
 
 
 
