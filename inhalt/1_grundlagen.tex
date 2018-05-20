@@ -320,24 +320,29 @@ The Virtual DOM is an exact representation of the HTML DOM with JavaScript. Once
 \newpage
 
 \subsubsection{Redux}
-Redux is a predictable state container for JavaScript apps. It makes applications more consistent, by organizing all states in your app. Redux evolves the ideas of the Flux software architecture. 
-The gist of Redux is that all states are kept as an object tree in a single store. It is only possible to change this object tree by emitting an action, this action is an object describing what happened. To specify how these actions change the state tree, pure reducers are written.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7 \textwidth]{bilder/grundlagen/Redux.png}
-	\caption{Virtual DOM Camparison} source:\cite{Component}
-	\label{fig:COMPONENT}
-\end{figure}
-
-
-
-
-
+Redux is a predictable state container for JavaScript apps. It makes applications more consistent, by organizing all states in your app. Redux evolves the ideas of the Flux software architecture.
+ 
+The gist of Redux is that all states are kept as an object tree ,in a single store. It is only possible to change this object tree by emitting an action, this action is an object describing what happened. To specify how these actions change the state tree, pure reducers are written.
 
 The only difference to Flux is that Redux does not have a Dispatcher or support many stores. There is just a single store with a single root reducer. In bigger applications the root reducer can be split into smaller reducers, each operating independently on the different parts of the state tree. 
 
+Redux adds a lot of overhead to an application, a lot of more files and code are created. Considering that Redux should only be used if the following points are true. 
 
+\begin{itemize}
+\item Reasonable amounts if data is changing over time
+\item A single source of truth is needed
+\item Keeping all of the states in a top-level component is no longer sufficient.
+\end{itemize}
+
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8 \textwidth]{bilder/grundlagen/Redux.png}
+	\caption{Virtual DOM Camparison} source:\cite{Component}
+	\label{fig:COMPONENT}
+\end{figure}
 
 
 
