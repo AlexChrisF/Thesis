@@ -246,9 +246,9 @@ The Flux architecture is improving data consistency, it offers better possibilit
 \section{React and Flux}
 This section is about analyzing how React is implementing the Flux Software Architecture. React depends on encapsulated components that manage their own state. 
 
-Components are written in JavaScript, so data can easily passed through the Application. Everything that needs to be rendered is still written in HTML. Each component has it's own controllers, there is no more discrimination between what is shown in the Browser and business logic.
+Components are written in JavaScript, so data can easily passed through the Application. Everything that needs to be rendered is still written in HTML and parsed by React. Each component has its own controllers, there is no more discrimination between what is shown in the Browser and business logic.
 
-There are no separated HTML and JavaScript Files, only JavaScript. Every component is fully standalone and testable by it's own. This make React scalable and easy to test, there are no cascading dependencies. Every time the state of a component changes, the render function is called and the HTML is re-rendered with the changed data. Components can be nested, e.g. a board game that has consists of squares.
+There are no separated HTML and JavaScript files, only JavaScript. Every component is fully standalone and testable by its own. This makes React scalable and easy to test. There are no cascading dependencies. Every time the state of a component changes, the render function is called and the HTML is re-rendered with the changed data. Components can be nested, e.g. a board game that consists of squares.
 
 \begin{figure}[H]
 	\centering
@@ -288,11 +288,15 @@ Now when clicked on a square he square shall show the 'X' , the value can now be
 If this.setState is called, an update is scheduled by React and the value is merged in the correct component state. Furthermore the component and all of it's descendants are re-rendered. If a Square was clicked it would now show a 'X' in the grid.
 
 \subsubsection{Lifting State Up}
-Often data needs to be aggregated from multiple child components it makes sense to lift all states up from to the parent component, the parent component then passes down the individual states for the child components. E.g. in a Tic Tac Toe game, to determine who has won, the value of all square components would need to be checked. That is technically doable but a better approach is to save all states in the parent component and the parent component can simply check one array in order to determine who has won. The Square component is no longer keeping its own state, it receives the value from its parent Board and informs the parent when it was clicked. These components are called controlled components. 
+Often data needs to be aggregated from multiple child components. Then makes sense to lift all states up from to the parent component, the parent component then passes down the individual states for the child components.
+
+E.g. in a Tic Tac Toe game, to determine who has won, the value of all square components would need to be checked. That is technically doable but a better approach is to save all states in the parent component and the parent component can simply check one array in order to determine who has won. 
+
+The Square component is no longer keeping its own state, it receives the value from its parent Board and informs the parent when it was clicked. These components are called controlled components. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width= \textwidth]{bilder/grundlagen/Component5.png}
+	\includegraphics[width=0.7 \textwidth]{bilder/grundlagen/Component5.png}
 	\caption{Component} source:\cite{Component}
 	\label{fig:COMPONENT}
 \end{figure}
