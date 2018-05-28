@@ -319,6 +319,10 @@ A feed-forward neural network consist of one input layer, H hidden layers and on
 	y_{j} = f(z_{j})
 \end{equation}
 
+\begin{equation}
+z_{j} = \sum w_{ij}*x_{i} + b_{j}
+\end{equation}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{bilder/grundlagen/fast-forward.png}
@@ -326,13 +330,7 @@ A feed-forward neural network consist of one input layer, H hidden layers and on
 	\label{fig:COMPONENT}
 \end{figure}
 
-\begin{equation}
-	z_{j} = \sumw_{ij}*x_{i} + b_{j}
-\end{equation}
-
-
-\(  \)
-
+\( y_{i} \)
 where yj is the output of the unit from the current layer, f(·) is a (non-linear) activation function, z is called the preactivation, w denotes the edge weights and xi is the output of a unit from the previous layer. At each layer, we first compute the total input z to each unit, which is a weighted sum of the outputs of the units in the layer below. Then a non-linear function f (·) is applied to z to get the output of the unit.
 
 
