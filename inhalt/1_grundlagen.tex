@@ -341,13 +341,13 @@ All differential functions can be used as a activation function of a neural netw
 To train a neural network two things need to be done. First a forward pass, second an error backpropagation. 
 Given a certain input, a forward pass calculates the output of each unit . A predefined cost function \(E\) then compares the resulting outputs \(y_{out}\) with the correct answer and determines the error. 
 A common cost function for example is 
-squared error loss 
+squared error loss.
 
 \begin{equation}
 \(E = \sum{\frac{1}{2}*(target-y_{out})^2\)
 \end{equation}
 
-Common costfunctions are mean squared error or crossentropy loss. The following subsection will get more into details.
+Given that error it is now possible to check how weights need to be adjusted in order to bring the \(E\) to a minimum. By applying chain rule it is possible to check how each weight affects the overall result.
 
 
 \subsection{Backpropagation}
