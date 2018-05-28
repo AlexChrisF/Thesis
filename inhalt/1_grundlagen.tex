@@ -332,7 +332,7 @@ z_{j} = \sum w_{ij}*x_{i} + b_{j}
 
 Where \( y_{i} \) is the output of the unit from the current layer. The output is transformed with a non-linear activation function. \(z\) is called the preactivation and \(w\) denotes the edge weights. \( x_{i} \) is the output of a unit from the previous layer. At every layer first the total input \(z\) is computed, \(z\) is the weighted sum of the outputs from the layer before. After that a non linear function \( f(\cdot) \)is applied to \(z\) in order to get the output \( y_{j} \) of the unit. 
 
-All differential functions can be used as a activation function of a neural network.Most common activation functions are sigmoid,  \(f(z) = \frac1exp(-z)\)
+All differential functions can be used as a activation function of a neural network.Most common activation functions are sigmoid,  \(f(z) = \frac1(exp(-z))\)
 
 Any differential function can serve as activation function of a neural network. Some common activation functions are the sigmoid, f(z) = 1/(1 + exp(−z)), the hyperbolic tan- gent, f (z) = (exp(z) − exp(−z))/(exp(z) + exp(−z)), or the rectifier linear unit (ReLU). Un- less stated otherwise, we will use ReLU (see Equation 2.3) as activation function through- out this work.
 
