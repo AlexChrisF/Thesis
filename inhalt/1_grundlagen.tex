@@ -396,7 +396,7 @@ To avoid too big values or too small values in data a normalization is performed
 A really common problem for neural networks is the classification of images, or more general the classification of data into a specific category. The best performing neural network architecture for classifying images are convolutional neural networks. All convolutional neural networks consist of convolutional layers followed by pooling layers and some fully connected layers.
 
 \subsection{Convolutional layer}
-In the convolutional layer several kernels are applied to extract spacial related features. The convolutions are stacked, there is one put on the stack for each on the input applied kernel.
+In the convolutional layer several kernels are applied to extract spacial related features. Each output from the the convolutional layer is called a feature-map. Each feature-map was created by a different convolutional kernel of the layer. 
 
 \begin{figure}[H]
 	\centering
@@ -406,4 +406,5 @@ In the convolutional layer several kernels are applied to extract spacial relate
 \end{figure}
 
 \subsection{Pooling layer}
+
 
