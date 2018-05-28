@@ -330,7 +330,10 @@ z_{j} = \sum w_{ij}*x_{i} + b_{j}
 	\label{fig:COMPONENT}
 \end{figure}
 
-\( y_{i} \)
+\( y_{i} \) is the output of the neuron form the current layer. The output is transformed with a non-linear activation function, z is called the preactivation and w denotes the edge weights and \( x_{i} \) is the output of a unit from the previous layer. 
+At every layer first the total input z is computed. Z is the weighted sum of the outputs from the layer before. After that a non linear function f() is applied to z in order to get the output \( y_{j} \) of the unit
+
+
 where yj is the output of the unit from the current layer, f(·) is a (non-linear) activation function, z is called the preactivation, w denotes the edge weights and xi is the output of a unit from the previous layer. At each layer, we first compute the total input z to each unit, which is a weighted sum of the outputs of the units in the layer below. Then a non-linear function f (·) is applied to z to get the output of the unit.
 
 
