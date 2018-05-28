@@ -327,8 +327,17 @@ A feed-forward neural network consist of one input layer, H hidden layers and on
 \end{figure}
 
 \begin{equation}
-	z_{j} = w_{ij}*x_{i} + b_{j}
+	z_{j} = sum(w_{ij}*x_{i} + b_{j})
 \end{equation}
+
+
+\(  \)
+
+where yj is the output of the unit from the current layer, f(·) is a (non-linear) activation function, z is called the preactivation, w denotes the edge weights and xi is the output of a unit from the previous layer. At each layer, we first compute the total input z to each unit, which is a weighted sum of the outputs of the units in the layer below. Then a non-linear function f (·) is applied to z to get the output of the unit.
+
+
+
+Any differential function can serve as activation function of a neural network. Some common activation functions are the sigmoid, f(z) = 1/(1 + exp(−z)), the hyperbolic tan- gent, f (z) = (exp(z) − exp(−z))/(exp(z) + exp(−z)), or the rectifier linear unit (ReLU). Un- less stated otherwise, we will use ReLU (see Equation 2.3) as activation function through- out this work.
 
 
 
