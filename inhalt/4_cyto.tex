@@ -44,7 +44,7 @@ The following diagram shall give an overview of how responsibilities are distrib
 		parent anchor=south,
 		anchor=west,
 		calign=first,
-		inner xsep=7pt,
+		inner xsep=30pt,
 		edge path={
 			\noexpand\path [draw, \forestoption{edge}]
 			(!u.south west) +(7.5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
@@ -81,26 +81,12 @@ The data shall be fetched from a variable categories, placed in the Redux store.
 In order to fetch this data the component shall be connected to the Redux store so a High-Order Component CategoryListConnector is created. High-Order components wrap a component and add some functionalities in this case it adds the possibility to access the categories array in Redux store. 
 The directory will now look like this:
 
-\begin{forest}
-	for tree={font=\sffamily, %grow'=0,
-		folder indent=.9em, folder icons,
-		edge=densely dotted}
-	[main folder
-	[images, this folder size=20pt
-	[wallpapers]
-	[logo.pdf, is file]]
-	[tex-files
-	[chapter1.tex, is file]]
-	[main.tex, is file]
-	[main.aux, is file]
-	]
-\end{forest}
 
 Now it shall be possible to add another category to the category list therefore an action is needed that takes the new category name and the category color as a payload and executes a reducer that adds a category to the category array. The structure will now look like this:
 
 
 
-In short for each added component that needs access to the states a connector needs to be created and if not allready existing further actions and reducers need to be provided.
+In short for each added component that needs access to the states a connector needs to be created. Actions and reducers also need to be created to change the state, if not already existing.
 
 \subsection{Machine Learning API}
 The machine learning API is built with Tensorflow.js 
