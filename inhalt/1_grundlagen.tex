@@ -309,7 +309,7 @@ Now when clicked on a square, this square shall show the 'X'. The value can now 
 
 If this.setState is called, an update is scheduled by React and the value is merged in the correct component state. Furthermore the component and all of its descendants are re-rendered. If a Square was clicked it would now show a 'X' in the grid.
 
-\subsubsection{Lifting State Up}
+\subsection{Lifting State Up}
 Often data needs to be aggregated from multiple child components. Then it makes sense to lift all states up to a top-level component. The parent component then passes down the individual states for the child components.
 
 E.g. in a Tic Tac Toe game, to determine who has won, the value of all squares components would need to be checked. That is technically doable, but a better approach is to save all states in the parent component and the parent component can simply check one array, in order to determine who has won. 
@@ -324,7 +324,7 @@ The Square component is no longer keeping its own state, it receives the value f
 \end{figure}
 
 
-\subsubsection{Actions Go Up and Data Goes Down}
+\subsection{Action- and Dataflow}
 Taking the last examples it is clear that that is only passed in one way, from the top-level component to a child component. Another key principle is that actions are only passed up. For example if a nested component B is clicked or is triggered on a different event some state B shall be changed in the top-level component. That is possible because all functions that change the data in top-level component can be passed down to nested components via the props variable.
 
 \begin{figure}[H]
@@ -336,6 +336,9 @@ Taking the last examples it is clear that that is only passed in one way, from t
 
 
 \subsubsection{High-Order Components}
+As already knwon from the JavaScript introduction chapter
+a high-level function takes another function as an argument. Similar to that a High-Order Component is simpley a high-order function that takes a stateless component and returns the changed component. This is very practical since it gives the possibilty to give them extra functionality or to even change the wrapped component. 
+
 
 
 
