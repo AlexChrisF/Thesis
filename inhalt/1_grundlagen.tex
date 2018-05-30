@@ -275,12 +275,11 @@ In React all views are composable and freely re-renderable. at the top of each v
 The controller-view fetches the data from store and passes it down to all descendants, causing a re-rendering. Often the entire state of a store is passed down a chain of views allowing each descendant to take what he needs.
 
 \subsubsection{Actions}
-As already mentioned action change the store . Each action has payload with new data, every time an action occurs a dispatch is triggered to the stores.
-User-interaction is not the only of actions, it can also come from other places like the server.
+As already mentioned action change the store . Each action has payload with new data, every time an action occurs a dispatch is triggered to the stores. User-interaction is not the only of actions, it can also come from other places like the server.
 
 
 \subsubsection{Conclusion}
-The Flux architecture is improving data consistency, it offers better possibilities to debug. The unidirectional data flow makes that much easier. Since one can always follow the flow of actions.Furthermore with having the state and all the logic that is updatitng the state at one place  it is also possible to do more meaningful unit tests.
+The Flux architecture is improving data consistency. The unidirectional data flow makes it much easier to debug. Since one can always follow easily the flow of actions. Furthermore with having the state and all the logic that is updatitng the state at one place it is also possible to do more meaningful unit tests.
 
 \section{React and Flux}
 This section is about analyzing how React is implementing the Flux Software Architecture. React depends on encapsulated components that manage their own state. 
