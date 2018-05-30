@@ -282,7 +282,7 @@ As already mentioned action change the store . Each action has payload with new 
 The Flux architecture is improving data consistency. The unidirectional data flow makes it much easier to debug. Since one can always follow easily the flow of actions. Furthermore with having the state and all the logic that is updatitng the state at one place it is also possible to do more meaningful unit tests.
 
 \section{React and Flux}
-This section is about analyzing how React is implementing the Flux Software Architecture. React depends on encapsulated components that manage their own state. 
+This section is about analyzing how React is implementing the Flux Software Architecture. React depends on encapsulated components that manage their own state. An application consists of nested components, somehow similar to the HTML DOM.
 
 Components are written in JavaScript, so data can easily passed through the Application. Everything that needs to be rendered is still written in HTML and parsed by React. Each component has its own controllers, there is no more discrimination between what is shown in the Browser and business logic.
 
