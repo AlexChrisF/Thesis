@@ -181,6 +181,24 @@ toc,          % In Inhaltsverzeichnis aufnehmen
 }
 
 
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\newcommand*\keystroke[1]{%
+	\tikz[baseline=(key.base)]
+	\node[%
+	minimum width=1.2em,
+	draw,
+	fill=white,
+	drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+	rectangle,
+	rounded corners=2pt,
+	inner sep=1pt,
+	line width=0.5pt,
+	font=\scriptsize\sffamily
+	](key) {#1\strut}
+	;
+}
+
 \usepackage{forest}
 
 \definecolor{folderbg}{RGB}{124,166,198}
@@ -195,5 +213,3 @@ toc,          % In Inhaltsverzeichnis aufnehmen
 		(-1.15*\Size,-\Size) rectangle (1.15*\Size,\Size);
 	}
 }
-
-
