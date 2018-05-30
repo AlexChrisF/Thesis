@@ -34,12 +34,7 @@ To save all labels and categories and settings the button can be pressed. To imp
 
 
 \subsection{System architecture}
-CYTO AI is structured as a tree of nested components. The state of all components is hold in a Redux store. There are several arrays describing the application state. For example an image array or a category array. In order to give each component access to these states a connector is created for those components that need access. Further actions need to be defined, one for each reducer in the store. As explained in ,reducers are the only way to change data. Actions simply pass the new data to the reducer.
-
-
- 
-\subsubsection{Component structure}
-The section shall give an overview of how components are nested how responsibilities are distributed.
+The following diagram shall give an overview of how responsibilities are distributed over the system.
 
 \begin{forest}
 	for tree={
@@ -63,19 +58,62 @@ The section shall give an overview of how components are nested how responsibili
 		before computing xy={l=15pt},
 	}  
 	[CYTO AI
-	[src
-	[components
+		[API]
+		[src
+			[components]
+			[containers]
+			[actions]
+			[reducers]
+			[stories]
+		]
 	]
-	[containers
-	]
-	[reducers
-	]
-	[stories
-	]
-	]
-	]
+}				
 \end{forest}
-\subsubsection{Machine Learning API}
+
+API contains all files and functionality needed for the machine learning classifying task. Folder src contains all components, tests and Redux related files. 
+In order to explain how this structure works a further component shall be added.
+
+First a new component "CategoryList" is created. It will be placed in components directory. 
+CategoryList shall simply show a list of categories. 
+The data shall be fetched from a variable categories, placed in the Redux store.
+In order to fetch this data the component shall be connected to the Redux store so a High-Order Component CategoryListConnector is created. High-Order components wrap a component and add some functionalities in this case it adds the possibility to access the categories array in Redux store. 
+The directory tree would now look like 
+
+\begin{forest}
+	for tree={
+		font=\ttfamily,
+		grow'=0,
+		child anchor=west,
+		parent anchor=south,
+		anchor=west,
+		calign=first,
+		inner xsep=7pt,
+		edge path={
+			\noexpand\path [draw, \forestoption{edge}]
+			(!u.south west) +(7.5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
+		},
+		before typesetting nodes={
+			if n=1
+			{insert before={[,phantom]}}
+			{}
+		},
+		fit=band,
+		before computing xy={l=15pt},
+	}  
+	[CYTO AI
+	[API]
+	[src
+	[components]
+	[containers]
+	[actions]
+	[reducers]
+	[stories]
+	]
+	]
+}	
+\end{forest}
+
+\subsection{Machine Learning API}
 
 \subsection{Performance}
 
