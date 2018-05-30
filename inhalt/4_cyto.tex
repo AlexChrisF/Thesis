@@ -72,7 +72,7 @@ The following diagram shall give an overview of how responsibilities are distrib
 			[stories]
 		]
 	]
-
+   ]
 \end{forest}
 
 
@@ -84,6 +84,49 @@ CategoryList shall simply show a list of categories.
 The data shall be fetched from a variable categories, placed in the Redux store.
 In order to fetch this data the component shall be connected to the Redux store so a High-Order Component CategoryListConnector is created. High-Order components wrap a component and add some functionalities in this case it adds the possibility to access the categories array in Redux store. 
 The directory will now look like this:
+
+
+\begin{forest}
+	for tree={
+		font=\ttfamily,
+		grow'=0,
+		child anchor=west,
+		parent anchor=south,
+		anchor=west,
+		calign=first,
+		inner xsep=7pt,
+		edge path={
+			\noexpand\path [draw, \forestoption{edge}]
+			(!u.south west) +(7.5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
+		},
+		% style for your file node 
+		file/.style={edge path={\noexpand\path [draw, \forestoption{edge}]
+				(!u.south west) +(7.5pt,0) |- (.child anchor) \forestoption{edge label};},
+			inner xsep=2pt,font=\small\ttfamily
+		},
+		before typesetting nodes={
+			if n=1
+			{insert before={[,phantom]}}
+			{}
+		},
+		fit=band,
+		before computing xy={l=15pt},
+	}  
+	[CYTO AI
+	[API]
+	[src
+	[components
+		[categoryList.js]
+	]
+	[containers]
+	[actions]
+	[reducers]
+	[stories]
+	]
+	]
+	]
+\end{forest}
+
 
 
 Now it shall be possible to add another category to the category list therefore an action is needed that takes the new category name and the category color as a payload and executes a reducer that adds a category to the category array. The structure will now look like this:
