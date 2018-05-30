@@ -79,16 +79,15 @@ The following diagram shall give an overview of how responsibilities are distrib
 API contains all files and functionality needed for the machine learning classifying task. Folder src contains all components, tests and Redux related files. 
 In order to explain how this structure works a further component shall be added.
 
-First a new component "CategoryList" is created. It will be placed in components directory. 
-CategoryList shall simply show a list of categories. 
-The data shall be fetched from a variable categories, placed in the Redux store.
-In order to fetch this data the component shall be connected to the Redux store so a High-Order Component CategoryListConnector is created. High-Order components wrap a component and add some functionalities in this case it adds the possibility to access the categories array in Redux store. 
-The directory will now look like this:
-
+First a new component "CategoryList" is created. CategoryList shall simply show a list of categories. 
 
 \lstinputlisting{code/cyto/categoryList.js}
 
+The data shall be fetched from a variable categories, placed in the Redux store. In order to fetch this data the component shall be connected to the Redux store so a High-Order Component CategoryListConnector is created. High-Order components wrap a component and add some functionalities in this case it adds the possibility to access the categories array in Redux store. 
+
 \lstinputlisting{code/cyto/connectedCategory.js}
+
+The directory will now look like this:
 
 \begin{forest}
 	for tree={
@@ -133,11 +132,15 @@ The directory will now look like this:
 
 
 
-Now it shall be possible to add another category to the category list therefore an action is needed that takes the new category name and the category color as a payload and executes a reducer that adds a category to the category array. The structure will now look like this:
+Further it shall be possible to add another category to the category list, therefore an action is needed that takes the new category name and the category color as a payload.
 
 \lstinputlisting{code/cyto/actions.js}
 
+A reducer will now be called given and the action will be passed to it.
+
 \lstinputlisting{code/cyto/categoryReducer.js}
+
+The structure will now look like this:
 
 \begin{forest}
 	for tree={
@@ -189,7 +192,9 @@ Now it shall be possible to add another category to the category list therefore 
 In short for each added component that needs access to the states a connector needs to be created. Actions and reducers also need to be created to change the state, if not already existing.
 
 \subsection{Machine Learning API}
-The machine learning API is built with Tensorflow.js 
+In order to classify images a small API was built. Every time the "fit" button was clicked an asynchronous API call is made. The calls look like following:
+
+ 
 
 \subsection{Performance}
 
