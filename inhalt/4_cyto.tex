@@ -37,7 +37,7 @@ To save all labels and categories and settings the button can be pressed. To imp
 The following diagram shall give an overview of how responsibilities are distributed over the system.
 
 \begin{forest}
-	for tree={
+	 for tree={
 		font=\ttfamily,
 		grow'=0,
 		child anchor=west,
@@ -67,7 +67,7 @@ The following diagram shall give an overview of how responsibilities are distrib
 			[stories]
 		]
 	]
-}				
+				
 \end{forest}
 
 API contains all files and functionality needed for the machine learning classifying task. Folder src contains all components, tests and Redux related files. 
@@ -77,42 +77,9 @@ First a new component "CategoryList" is created. It will be placed in components
 CategoryList shall simply show a list of categories. 
 The data shall be fetched from a variable categories, placed in the Redux store.
 In order to fetch this data the component shall be connected to the Redux store so a High-Order Component CategoryListConnector is created. High-Order components wrap a component and add some functionalities in this case it adds the possibility to access the categories array in Redux store. 
-The directory tree would now look like 
+The directory will now look like this:
 
-\begin{forest}
-\definecolor{foldercolor}{RGB}{124,166,198}
 
-\tikzset{pics/folder/.style={code={%
-			\node[inner sep=0pt, minimum size=#1](-foldericon){};
-			\node[folder style, inner sep=0pt, minimum width=0.3*#1, minimum height=0.6*#1, above right, xshift=0.05*#1] at (-foldericon.west){};
-			\node[folder style, inner sep=0pt, minimum size=#1] at (-foldericon.center){};}
-	},
-	pics/folder/.default={20pt},
-	folder style/.style={draw=foldercolor!80!black,top color=foldercolor!40,bottom color=foldercolor}
-}
-
-\forestset{is file/.style={edge path'/.expanded={%
-			([xshift=\forestregister{folder indent}]!u.parent anchor) |- (.child anchor)},
-		inner sep=1pt},
-	this folder size/.style={edge path'/.expanded={%
-			([xshift=\forestregister{folder indent}]!u.parent anchor) |- (.child anchor) pic[solid]{folder=#1}}, inner ysep=0.6*#1},
-	folder tree indent/.style={before computing xy={l=#1}},
-	folder icons/.style={folder, this folder size=#1, folder tree indent=3*#1},
-	folder icons/.default={12pt},
-}
-  
-	[CYTO AI
-	[API]
-	[src
-	[components]
-	[containers]
-	[actions]
-	[reducers]
-	[stories]
-	]
-	]
-}	
-\end{forest}
 
 \subsection{Machine Learning API}
 
