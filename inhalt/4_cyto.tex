@@ -2,7 +2,7 @@
 CYTO AI is the first fully web-based image labeling and classifying tool there is. Due to the web-based design no installation of databases or any configuration is needed to use all advantages of modern machine learning and convenient labeling. Further no data will be uploaded to any server, all data never leaves the browser which makes CYTO AI very performant and sets a high standard of privacy at the same time. The following sections shall explain how CYTO AI works and which techniques and architectures were used to build it.
 
 \subsection{System overview}
-First pictures need to be uploaded by clicking on the upload button, whole folders can be selected. Mind that also all images in subfolders will be uploaded. In order to categorize images, categories need to be created. That is possible by clicking on the plus icon in the categories list. After all necessary categories have been created images can be annotated. There are several was to annoate an image. It is possible to drag an image and drop it on the wished category. A different way is to click on one picture in order to select it an then use the keyboard to annotate the image. Following keys are supported:
+First pictures need to be uploaded by clicking on the upload button, whole folders can be selected. Mind that also all images in subfolders will be uploaded. In order to categorize images, categories need to be created. That is possible by clicking on the plus icon in the categories list. After all necessary categories have been created images can be annotated. There are several was to annoate an image. It is possible to drag an image and drop it on the wished category. A different way is to click on one picture in order to select it an then use the keyboard to annotate the image. Following keys are supported to annotate an image:
 
 \begin{itemize}
 	\item \keystroke{ 1 } \keystroke{2} \keystroke{3} \keystroke{4} \keystroke{5} \keystroke{6} \keystroke{7}
@@ -34,15 +34,13 @@ To save all labels and categories and settings the button can be pressed. To imp
 
 
 \subsection{System architecture}
-CYTO AI is structured as tree of nested components. 
-
-\VerbatimInput{tree.txt}
+CYTO AI is structured as a tree of nested components. The state of all components is hold in a Redux store. There are several arrays describing the application state. For example an image array or a category array. In order to give each component access to these states a connector is created for those components that need access. Further actions need to be defined, one for each reducer in the store. As explained in ,reducers are the only way to change data. Actions simply pass the new data to the reducer.
 
 
-
-
-
+ 
 \subsubsection{Component structure}
+The application is structured as followed:
+
 
 \subsubsection{Machine Learning API}
 
