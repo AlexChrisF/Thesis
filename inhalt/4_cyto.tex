@@ -86,9 +86,7 @@ In order to fetch this data the component shall be connected to the Redux store 
 The directory will now look like this:
 
 
-
 \lstinputlisting{code/cyto/categoryList.js}
-
 
 \lstinputlisting{code/cyto/connectedCategory.js}
 
@@ -137,6 +135,9 @@ The directory will now look like this:
 
 Now it shall be possible to add another category to the category list therefore an action is needed that takes the new category name and the category color as a payload and executes a reducer that adds a category to the category array. The structure will now look like this:
 
+\lstinputlisting{code/cyto/actions.js}
+
+\lstinputlisting{code/cyto/categoryReducer.js}
 
 \begin{forest}
 	for tree={
