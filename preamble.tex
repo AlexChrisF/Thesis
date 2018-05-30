@@ -199,25 +199,16 @@ toc,          % In Inhaltsverzeichnis aufnehmen
 	;
 }
 
+\usepackage{forest}
+\definecolor{folderbg}{RGB}{124,166,198}
+\definecolor{folderborder}{RGB}{110,144,169}
 
-\usepackage[dvipsnames]{xcolor}
-
-\usepackage{fancyvrb}
-
-% redefine \VerbatimInput
-\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
-{fontsize=\footnotesize,
-	%
-	frame=lines,  % top and bottom rule only
-	framesep=2em, % separation between frame and text
-	rulecolor=\color{Gray},
-	%
-	label=\fbox{\color{Black}data.txt},
-	labelposition=topline,
-	%
-	commandchars=\|\(\), % escape character and argument delimiters for
-	% commands within the verbatim
-	commentchar=*        % comment character
+\def\Size{4pt}
+\tikzset{
+	folder/.pic={
+		\filldraw[draw=folderborder,top color=folderbg!50,bottom color=folderbg]
+		(-1.05*\Size,0.2\Size+5pt) rectangle ++(.75*\Size,-0.2\Size-5pt);  
+		\filldraw[draw=folderborder,top color=folderbg!50,bottom color=folderbg]
+		(-1.15*\Size,-\Size) rectangle (1.15*\Size,\Size);
+	}
 }
-
-
