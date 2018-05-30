@@ -96,11 +96,14 @@ The directory will now look like this:
 	]
 \end{forest}
 
-Now it shall be possible to add another category to the category list therefore an action is needed that takes the new category name and the category color as a payload and executes a reducer that adds a category to the category array.
+Now it shall be possible to add another category to the category list therefore an action is needed that takes the new category name and the category color as a payload and executes a reducer that adds a category to the category array. The structure will now look like this:
 
 
+
+In short for each added component that needs access to the states a connector needs to be created and if not allready existing further actions and reducers need to be provided.
 
 \subsection{Machine Learning API}
+The machine learning API is build with Tensorflow.js 
 
 \subsection{Performance}
 
