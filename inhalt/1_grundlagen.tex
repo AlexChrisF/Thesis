@@ -324,6 +324,21 @@ The Square component is no longer keeping its own state, it receives the value f
 \end{figure}
 
 
+\subsubsection{Actions Go Up and Data Goes Down}
+Taking the last examples it is clear that that is only passed in one way, from the top-level component to a child component. Another key principle is that actions are only passed up. For example if a nested component B is clicked or is triggered on a different event some state B shall be changed in the top-level component. That is possible because all functions that change the data in top-level component can be passed down to nested components via the props variable.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{bilder/grundlagen/dataFlow.png}
+	\caption{Action- and Dataflow} source:\cite{ReactLogo}
+	\label{fig:RL}
+\end{figure}
+
+
+\subsubsection{High-Order Components}
+
+
+
 \subsubsection{Virtual DOM}
 
 Manipulating the DOM is the main thing modern, interactive web applications do. Unfortunately it is a lot slower than running JavaScript. The HTML DOM is always tree structured, which makes it easy to traverse through it, but it also offers poor performance.
@@ -358,8 +373,6 @@ Redux adds a lot of overhead to an application, a lot of more files and code are
 \item A single source of truth is needed
 \item Keeping all of the states in a top-level component is no longer sufficient.
 \end{itemize}
-
-\newpage
 
 It should further be mentioned that Redux destroys a key principle of React, by giving the possibility to access the state from all components in an application directly. It is no longer obvious what data is used in which component. The following illustration shall undermine this thesis.
 
