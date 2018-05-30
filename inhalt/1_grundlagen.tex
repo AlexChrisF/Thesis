@@ -225,7 +225,7 @@ Interaction with these elements creates events that usually are handled by the c
 \end{figure}
 
 
-The so called separation of concerns makes it easier to split work and, due to that it makes it easier to maintain code. But it also comes with an increased complex setup process, changes for example in the model or the controller affect the whole entity. The bidirectional communication in the MVC structure makes it hard to debug, changing one entity  causes a cascading effect across the codebase.
+The so called separation of concerns makes it easier to split work and, due to that it makes it easier to maintain code. But it also comes with an increased complex setup process. Changes for example in the model or the controller affect the whole entity. The bidirectional communication in the MVC structure makes it hard to debug, changing one entity  causes a cascading effect across the codebase.
 
 React tries to get rid of that by introducing a different architecture called Flux. The following section shall explain how Flux is different from the MVC pattern.
 
@@ -264,7 +264,7 @@ A dispatcher has no real intelligence of its own, it only provides a simple mech
 This becomes more important when big applications shall be built. The dispatcher then handles dependencies between different stores, he takes care of updating the different stores in a specific order.
 
 \subsubsection{Stores}
-Stores contain the application's logic and sates. This role can be considered somehow similar to a model in the traditional MVC,the difference is that stores manage the data of many objects and not a single record of data like ORM models do. They manage the application state for a whole domain. 
+Stores contain the application's logic and states. This role can be considered somehow similar to a model in the traditional MVC, the difference is that stores manage the data of many objects and not a single record of data like ORM models do. They manage the application state for a whole domain. 
 
 For example Facebook's Lookback Video Editor utilized a TimeStore that kept track of the playback time position and the playback state. On the other hand, the same application's ImageStore kept track of a collection of images.
 
@@ -272,7 +272,7 @@ For example Facebook's Lookback Video Editor utilized a TimeStore that kept trac
 
 In React all views are composable and freely re-renderable. at the top of each view, the highest in hierarchy, there is a view that listens to events that are sent by the store. It is called a controller-view. 
 
-The controller-view fetches the data from store and passes it down to all descendants, causing a re-rendering of that views. Often the entire state of a store is passed down a chain of views allowing each descendant to take what he needs.
+The controller-view fetches the data from store and passes it down to all descendants, causing a re-rendering. Often the entire state of a store is passed down a chain of views allowing each descendant to take what he needs.
 
 \subsubsection{Actions}
 As already mentioned action change the store . Each action has payload with new data, every time an action occurs a dispatch is triggered to the stores.
