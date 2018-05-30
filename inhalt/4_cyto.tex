@@ -39,7 +39,7 @@ CYTO AI is structured as a tree of nested components. The state of all component
 
  
 \subsubsection{Component structure}
-The application is structured as followed:
+The section shall give an overview of how components are nested how responsibilities are distributed.
 \begin{verbatim}
 
  cyto
@@ -47,89 +47,89 @@ The application is structured as followed:
 |--|--|-- package-lock.json
 |--|--|-- package.json
 |--|--|-- src
-|--| |  |--|--|-- App.css
-|--| |  |--|--|-- App.js
-|--| |  |--|--|-- App.test.js
-|--| |  |--|--|-- actions
-|--| |  |--| |  |--|--|-- categories.js
-|--| |  |--| |  |--|--|-- categories.test.js
-|--| |  |--| |  |--|--|-- classifier.js
-|--| |  |--| |  |--|--|-- classifier.test.js
-|--| |  |--| |  |--|--|-- images.js
-|--| |  |--| |  |--|--|-- images.test.js
-|--| |  |--| |  |--|--|-- settings.js
-|--| |  |--| |  |--|--|-- settings.test.js
-|--| |  |--|--|-- classifier.js
-|--| |  |--|--|-- components
-|--| |  |--| |  |--|--|-- Categories.css.js
-|--| |  |--| |  |--|--|-- Categories.js
-|--| |  |--| |  |--|--|-- Categories.test.js
-|--| |  |--| |  |--|--|-- Category.css.js
-|--| |  |--| |  |--|--|-- Category.js
-|--| |  |--| |  |--|--|-- Category.test.js
-|--| |  |--| |  |--|--|-- Classifier.css.js
-|--| |  |--| |  |--|--|-- Classifier.js
-|--| |  |--| |  |--|--|-- Classifier.test.js
-|--| |  |--| |  |--|--|-- CreateCategoryDialog.css.js
-|--| |  |--| |  |--|--|-- CreateCategoryDialog.js
-|--| |  |--| |  |--|--|-- CreateCategoryDialog.test.js
-|--| |  |--| |  |--|--|-- Gallery.css.js
-|--| |  |--| |  |--|--|-- Gallery.js
-|--| |  |--| |  |--|--|-- Gallery.test.js
-|--| |  |--| |  |--|--|-- HelpDialog.css.js
-|--| |  |--| |  |--|--|-- HelpDialog.js
-|--| |  |--| |  |--|--|-- HelpDialog.test.js
-|--| |  |--| |  |--|--|-- Image.css.js
-|--| |  |--| |  |--|--|-- Image.js
-|--| |  |--| |  |--|--|-- Image.test.js
-|--| |  |--| |  |--|--|-- Images.css
-|--| |  |--| |  |--|--|-- Images.js
-|--| |  |--| |  |--|--|-- Images.test.js
-|--| |  |--| |  |--|--|-- Primary.css.js
-|--| |  |--| |  |--|--|-- Primary.js
-|--| |  |--| |  |--|--|-- Primary.test.js
-|--| |  |--| |  |--|--|-- Settings.css.js
-|--| |  |--| |  |--|--|-- Settings.js
-|--| |  |--| |  |--|--|-- Settings.test.js
-|--| |  |--| |  |--|--|-- Sidebar.css.js
-|--| |  |--| |  |--|--|-- Sidebar.js
-|--| |  |--| |  |--|--|-- Sidebar.test.js
-|--| |  |--| |  |--|--|-- UploadButton.js
-|--| |  |--| |  |--|--|-- dnd-global-context.js
-|--| |  |--|--|-- constants.js
-|--| |  |--|--|-- containers
-|--| |  |--| |  |--|--|-- ConnectedCategories.js
-|--| |  |--| |  |--|--|-- ConnectedCategory.js
-|--| |  |--| |  |--|--|-- ConnectedClassifier.js
-|--| |  |--| |  |--|--|-- ConnectedCreateCategoryDialog.js
-|--| |  |--| |  |--|--|-- ConnectedGallery.js
-|--| |  |--| |  |--|--|-- ConnectedImage.js
-|--| |  |--| |  |--|--|-- ConnectedImages.js
-|--| |  |--| |  |--|--|-- ConnectedPrimary.js
-|--| |  |--| |  |--|--|-- ConnectedSidebar.js
-|--| |  |--| |  |--|--|-- ConnectedUploadButton.js
-|--| |  |--|--|-- images
-|--| |  |--| |  |--|--|-- mnist.json
-|--| |  |--| |  |--|--|-- stock.json
-|--| |  |--|--|-- index.css
-|--| |  |--|--|-- index.js
-|--| |  |--|--|-- reducers
-|--| |  |--| |  |--|--|-- categories.js
-|--| |  |--| |  |--|--|-- categories.test.js
-|--| |  |--| |  |--|--|-- classifier.js
-|--| |  |--| |  |--|--|-- classifier.test.js
-|--| |  |--| |  |--|--|-- images.js
-|--| |  |--| |  |--|--|-- images.test.js
-|--| |  |--| |  |--|--|-- index.js
-|--| |  |--| |  |--|--|-- settings.js
-|--| |  |--| |  |--|--|-- settings.test.js
-|--| |  |--|--|-- registerServiceWorker.js
-|--| |  |--|--|-- selectors
-|--| |  |--| |  |--|--|-- images.js
-|--| |  |--| |  |--|--|-- images.test.js
-|--| |  |--| |  |--|--|-- index.js
-|--| |  |--|--|-- stories
-|--| |      |--|--|-- index.js
+|--| |  |--|--|-- App.css
+|--| |  |--|--|-- App.js
+|--| |  |--|--|-- App.test.js
+|--| |  |--|--|-- actions
+|--| |  |--| |  |--|--|-- categories.js
+|--| |  |--| |  |--|--|-- categories.test.js
+|--| |  |--| |  |--|--|-- classifier.js
+|--| |  |--| |  |--|--|-- classifier.test.js
+|--| |  |--| |  |--|--|-- images.js
+|--| |  |--| |  |--|--|-- images.test.js
+|--| |  |--| |  |--|--|-- settings.js
+|--| |  |--| |  |--|--|-- settings.test.js
+|--| |  |--|--|-- classifier.js
+|--| |  |--|--|-- components
+|--| |  |--| |  |--|--|-- Categories.css.js
+|--| |  |--| |  |--|--|-- Categories.js
+|--| |  |--| |  |--|--|-- Categories.test.js
+|--| |  |--| |  |--|--|-- Category.css.js
+|--| |  |--| |  |--|--|-- Category.js
+|--| |  |--| |  |--|--|-- Category.test.js
+|--| |  |--| |  |--|--|-- Classifier.css.js
+|--| |  |--| |  |--|--|-- Classifier.js
+|--| |  |--| |  |--|--|-- Classifier.test.js
+|--| |  |--| |  |--|--|-- CreateCategoryDialog.css.js
+|--| |  |--| |  |--|--|-- CreateCategoryDialog.js
+|--| |  |--| |  |--|--|-- CreateCategoryDialog.test.js
+|--| |  |--| |  |--|--|-- Gallery.css.js
+|--| |  |--| |  |--|--|-- Gallery.js
+|--| |  |--| |  |--|--|-- Gallery.test.js
+|--| |  |--| |  |--|--|-- HelpDialog.css.js
+|--| |  |--| |  |--|--|-- HelpDialog.js
+|--| |  |--| |  |--|--|-- HelpDialog.test.js
+|--| |  |--| |  |--|--|-- Image.css.js
+|--| |  |--| |  |--|--|-- Image.js
+|--| |  |--| |  |--|--|-- Image.test.js
+|--| |  |--| |  |--|--|-- Images.css
+|--| |  |--| |  |--|--|-- Images.js
+|--| |  |--| |  |--|--|-- Images.test.js
+|--| |  |--| |  |--|--|-- Primary.css.js
+|--| |  |--| |  |--|--|-- Primary.js
+|--| |  |--| |  |--|--|-- Primary.test.js
+|--| |  |--| |  |--|--|-- Settings.css.js
+|--| |  |--| |  |--|--|-- Settings.js
+|--| |  |--| |  |--|--|-- Settings.test.js
+|--| |  |--| |  |--|--|-- Sidebar.css.js
+|--| |  |--| |  |--|--|-- Sidebar.js
+|--| |  |--| |  |--|--|-- Sidebar.test.js
+|--| |  |--| |  |--|--|-- UploadButton.js
+|--| |  |--| |  |--|--|-- dnd-global-context.js
+|--| |  |--|--|-- constants.js
+|--| |  |--|--|-- containers
+|--| |  |--| |  |--|--|-- ConnectedCategories.js
+|--| |  |--| |  |--|--|-- ConnectedCategory.js
+|--| |  |--| |  |--|--|-- ConnectedClassifier.js
+|--| |  |--| |  |--|--|-- ConnectedCreateCategoryDialog.js
+|--| |  |--| |  |--|--|-- ConnectedGallery.js
+|--| |  |--| |  |--|--|-- ConnectedImage.js
+|--| |  |--| |  |--|--|-- ConnectedImages.js
+|--| |  |--| |  |--|--|-- ConnectedPrimary.js
+|--| |  |--| |  |--|--|-- ConnectedSidebar.js
+|--| |  |--| |  |--|--|-- ConnectedUploadButton.js
+|--| |  |--|--|-- images
+|--| |  |--| |  |--|--|-- mnist.json
+|--| |  |--| |  |--|--|-- stock.json
+|--| |  |--|--|-- index.css
+|--| |  |--|--|-- index.js
+|--| |  |--|--|-- reducers
+|--| |  |--| |  |--|--|-- categories.js
+|--| |  |--| |  |--|--|-- categories.test.js
+|--| |  |--| |  |--|--|-- classifier.js
+|--| |  |--| |  |--|--|-- classifier.test.js
+|--| |  |--| |  |--|--|-- images.js
+|--| |  |--| |  |--|--|-- images.test.js
+|--| |  |--| |  |--|--|-- index.js
+|--| |  |--| |  |--|--|-- settings.js
+|--| |  |--| |  |--|--|-- settings.test.js
+|--| |  |--|--|-- registerServiceWorker.js
+|--| |  |--|--|-- selectors
+|--| |  |--| |  |--|--|-- images.js
+|--| |  |--| |  |--|--|-- images.test.js
+|--| |  |--| |  |--|--|-- index.js
+|--| |  |--|--|-- stories
+|--| |      |--|--|-- index.js
 |--|--|-- yarn.lock
 
 8 directories, 80 files
