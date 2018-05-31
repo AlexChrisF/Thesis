@@ -61,18 +61,23 @@ The following diagram shall give an overview of how responsibilities are distrib
 		},
 		fit=band,
 		before computing xy={l=15pt},
-	}  
-	[CYTO AI
-		[API]
-		[src
-			[components]
-			[containers]
-			[actions]
-			[reducers]
-			[stories]
-		]
+	}
+	[system
+	[config
 	]
-   ]
+	[lib
+	[Access
+	]
+	[Plugin
+	]
+	[file.txt,file
+	]
+	]
+	[templates
+	]
+	[tests
+	]
+	]
 \end{forest}
 
 
@@ -115,19 +120,24 @@ The directory will now look like this:
 		fit=band,
 		before computing xy={l=15pt},
 	}  
-	[CYTO AI
-	[src
-	[components
-	[categoryList.js, file]
+	[system
+	[config
 	]
-	[containers
-	[connectedCategoryList.js, file]
+	[lib
+	[Access
 	]
-	
+	[Plugin
+	]
+	[file.txt,file
 	]
 	]
-	
+	[templates
+	]
+	[tests
+	]
+	]
 \end{forest}
+
 
 
 
@@ -168,22 +178,20 @@ The structure will now look like this:
 		fit=band,
 		before computing xy={l=15pt},
 	}  
-	[CYTO AI
-	[API]
-	[src
-
-	[components
-	[categoryList.js, file]
+	[system
+	[config
 	]
-	[containers
-	[connectedCategoryList.js, file]
+	[lib
+	[Access
 	]
-	[actions
-	[categories.js, file]
+	[Plugin
 	]
-	[reducers
-	[categories.js, file]
+	[file.txt,file
 	]
+	]
+	[templates
+	]
+	[tests
 	]
 	]
 \end{forest}
@@ -195,6 +203,7 @@ In short for each added component that needs access to the states a connector ne
 In order to classify images a small API was built. Every time the "fit" button was clicked an asynchronous API call is made. The calls look like following:
 
 
+\lstinputlisting{code/cyto/classifier.js}
 
 \subsection{Performance}
 
