@@ -395,6 +395,12 @@ TensforFlow.js is an open source JavaScript library for training and deploying n
 
 \subsection{Core Concepts}
 
-In order to train neural networks with images or other data, this data needs to be shaped into numerical arrays. These numerical arrays arrays are called Tensors, a Tensor has a shape attribute the defines the Tensors dimensions.
+In order to train neural networks with images or other data, this data needs to be shaped into numerical arrays. These numerical arrays are called Tensors, a Tensor has a shape attribute that defines the Tensor's dimensions.
 
 \lstinputlisting{code/grundlagen/tensor.js}
+
+Variables
+
+Variables are initialized with a tensor of values. Unlike Tensors, however, their values are mutable. You can assign a new tensor to an existing variable using the assign method:
+
+
