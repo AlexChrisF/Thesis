@@ -392,7 +392,7 @@ It should further be mentioned that Redux destroys a key principle of React, by 
 \end{figure}
 
 \section{TensorFlow.js}
-TensforFlow.js is an open source JavaScript library for training and deploying neural networks in the browser and on Node.js. It provides intuitive APIs to build and train models from scratch in the browser. Existing models can be loaded and re-trained, also normal TensorFlow models can be imported and used. The WebGl-accelerated implementation makes it possible to train and predict in a reasonable time. There are a few core concepts of TensorFlow.js, the following subsection will go more into detail.
+TensforFlow.js is an open source JavaScript library for training and deploying neural networks in the browser and on Node.js. First introduced in summer 2017 it already provides intuitive APIs to build and train models from scratch in the browser. Existing models can be loaded and re-trained, also normal TensorFlow models can be imported and used. The WebGl-accelerated implementation makes it possible to train and predict in a reasonable time. There are a few core concepts of TensorFlow.js, the following subsection will go more into detail.
 
 \subsection{Core Concepts}
 
@@ -408,8 +408,13 @@ Operations are performed on tensors. TensoFlow.js provides a wide variety of alg
 
 \lstinputlisting{code/grundlagen/operations.js}
 
-Models and Layers
+In TensorFlow.js models are nothing different than a function that takes an input and produces an output. TensorFLow.js provides a high-lovel API called tf.model to construct a model with layers.
 
-Conceptually, a model is a function that given some input will produce some desired output.
+\lstinputlisting{code/grundlagen/model.js}
 
-In TensorFlow.js there are two ways to create models. You can use ops directly to represent the work the model does. For example:
+\subsection{Performance}
+Even though TensorFlow.js can access the local GPA it is 1.5-2 times slower than TensorFlow distributions written in Python or C++. 
+Small models train faster in the browser, however large models train up to 10-15 times slower in the browser compared to TensorFlow written in Python.
+
+\subsection{Conclusion}
+TensorFLow.js makes constructing neural networks, training and predicting very easy. The GPU support, makes it running relatively fast, however yet it is not as performant as TensorFlow distributions written in C++ or Python. In a nutshell, TensorFlow.ja has a serious potential, instead of calling a server backend for training and prediction, everything can be done locally. Models can be simply loaded over a CDN (Content Delivery Network).
