@@ -186,26 +186,7 @@ Data mutation shall be avoided.
 
 \newpage
 
-\section{React}
-Another key technology used in this project, is React. React is a JavaScript library for developing user interfaces. 
-
-Back in 2011, Facebook noticed that it was getting hard to maintain their Application and to run it flawlessly, because of the growing number of features. Many people were hired and the team size expanded dramatically. With the growing team size it took longer to publish urgent updates, too many people were involved and concerns could not be separated in a satisfying manner.
-
-A Facebook engineer called Jordan Walke decided to change that, in the same year he created FlaxJs, first prototype of React. Jordan was allowed to keep on working and created React (2012). 
-
-A short time later Instagram was bought by Facebook and both companies agreed on using React as the new core technology for User Experience. Further they agreed on making React publicly available. 
-
-In early 2013 at JS ConfUS, React became an open source project. Facebook CEO Mark Zuckerberg, speaking on the this conference said  "Our biggest mistake was betting too much on HTML5" and promised to provide better experiences with React.
-
-Currently React is getting more and more popular. A trend analysis, by Google shows that React is the leading modern User Experience JavaScript framework.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.4]{bilder/grundlagen/ReactDownloads.png}
-	\caption{Downloaded NPM Packages} source:\cite{NPM}
-	\label{fig:JS}
-\end{figure}
-
+\section{Software Patterns For Web-Development}
 
 \subsection{Classic MVC Model}
 For decades it was best practice to use the Model View Controller software architecture. The model stores the data presented in a view, in simple systems the model may contain business logic.
@@ -282,6 +263,26 @@ As already mentioned action change the store . Each action has payload with new 
 The Flux architecture is improving data consistency. The unidirectional data flow makes it much easier to debug. Since one can always follow easily the flow of actions. Furthermore with having the state and all the logic that is updatitng the state at one place it is also possible to do more meaningful unit tests.
 
 \section{React and Flux}
+
+Another key technology used in this project, is React. React is a JavaScript library for developing user interfaces. 
+
+Back in 2011, Facebook noticed that it was getting hard to maintain their Application and to run it flawlessly, because of the growing number of features. Many people were hired and the team size expanded dramatically. With the growing team size it took longer to publish urgent updates, too many people were involved and concerns could not be separated in a satisfying manner.
+
+A Facebook engineer called Jordan Walke decided to change that, in the same year he created FlaxJs, first prototype of React. Jordan was allowed to keep on working and created React (2012). 
+
+A short time later Instagram was bought by Facebook and both companies agreed on using React as the new core technology for User Experience. Further they agreed on making React publicly available. 
+
+In early 2013 at JS ConfUS, React became an open source project. Facebook CEO Mark Zuckerberg, speaking on the this conference said  "Our biggest mistake was betting too much on HTML5" and promised to provide better experiences with React.
+
+Currently React is getting more and more popular. A trend analysis, by Google shows that React is the leading modern User Experience JavaScript framework.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{bilder/grundlagen/ReactDownloads.png}
+	\caption{Downloaded NPM Packages} source:\cite{NPM}
+	\label{fig:JS}
+\end{figure}
+
 This section is about analyzing how React is implementing the Flux Software Architecture. React depends on encapsulated components that manage their own state. An application consists of nested components, somehow similar to the tree structure of a HTML DOM.
 
 Components are written in JavaScript, so data can easily passed through the Application. Everything that needs to be rendered is still written in HTML and parsed by React. Each component has its own controllers, there is no more discrimination between what is shown in the Browser and business logic.
