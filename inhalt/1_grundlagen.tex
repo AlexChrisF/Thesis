@@ -391,18 +391,10 @@ It should further be mentioned that Redux destroys a key principle of React, by 
 \end{figure}
 
 \section{TensorFlow.js}
-A JavaScript library for training and deploying ML models in the browser and on Node.js
-Develop ML in the Browser
-Use flexible and intuitive APIs to build and train models from scratch using the low-level JavaScript linear algebra library or the high-level layers API
-Run Existing models
-Use TensorFlow.js model converters to run pre-existing TensorFlow models right in the browser.
-Retrain Existing models
-Retrain pre-existing ML models using sensor data connected to the browser, or other client-side data.TensorFlow.js is an open source WebGL-accelerated JavaScript library for machine intelligence. It brings highly performant machine learning building blocks to your fingertips, allowing you to train neural networks in a browser or run pre-trained models in inference mode. See Getting Started for a guide on installing/configuring TensorFlow.js.
-
-TensorFlow.js provides low-level building blocks for machine learning as well as a high-level, Keras-inspired API for constructing neural networks. Let's take a look at some of the core components of the library.
-
-Core Concepts in TensorFlow.js
+TensforFlow.js is an open source JavaScript library for training and deploying neural networks in the browser and on Node.js. It provides intuitive APIs to build and train models from scratch in the browser. Existing models can be loaded and re-trained, also normal TensorFlow models can be imported and used. The WebGl-accelerated implementation makes it possible to train and predict in a reasonable time. There are a few core concepts of TensorFlow.js, the following subsection will go more into detail.
 
 \subsection{Core Concepts}
 
+In order to train neural networks with images or other data, this data needs to be shaped into numerical arrays. These numerical arrays arrays are called Tensors, a Tensor has a shape attribute the defines the Tensors dimensions.
 
+\lstinputlisting{code/grundlagen/tensor.js}
