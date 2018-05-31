@@ -335,14 +335,18 @@ Taking the last examples it is clear that that is only passed in one way, from t
 \end{figure}
 
 
-\subsubsection{High-Order Components}
+\subsection{High-Order Components}
 As already knwon from the JavaScript introduction chapter
-a high-level function takes another function as an argument. Similar to that a High-Order Component is simpley a high-order function that takes a stateless component and returns the changed component. This is very practical since it gives the possibilty to give them extra functionality or to even change the wrapped component. 
+a high-level function takes another function as an argument. Similar to that a High-Order Component is simply a high-order function that takes a stateless component and returns the changed component. This is very practical since it gives the possibilty to give them extra functionality or to even change the wrapped component. 
+
+\lstinputlisting{code/grundlagen/hoc1.js}
+
+
+\lstinputlisting{code/grundlagen/hoc2.js}
 
 
 
-
-\subsubsection{Virtual DOM}
+\subsection{Virtual DOM}
 
 Manipulating the DOM is the main thing modern, interactive web applications do. Unfortunately it is a lot slower than running JavaScript. The HTML DOM is always tree structured, which makes it easy to traverse through it, but it also offers poor performance.
 
@@ -362,7 +366,7 @@ The Virtual DOM is an exact representation of the HTML DOM with JavaScript. Once
 React is a relatively new framework with a new underlaying software architecture for user interfaces. This architecture leads to less files and more encapsulation. Therefore it scales better than classic MVC, when having more views on the same data. Due to the virtual DOM React is really performant when updating the DOM.
 
 
-\subsubsection{Redux}
+\subsection{Redux}
 Redux is a predictable state container for JavaScript apps. It makes applications more consistent, by organizing all satates in the app. Redux evolves the ideas of the Flux software architecture.
  
 The gist of Redux is that all states are kept as an object tree,in a single store. It is only possible to change this object tree by emitting an action, this action is an object describing what happened. To specify how these actions change the state tree, pure reducers are written.
@@ -385,3 +389,20 @@ It should further be mentioned that Redux destroys a key principle of React, by 
 	\caption{Redux Store} source:\cite{Component}
 	\label{fig:COMPONENT}
 \end{figure}
+
+\section{TensorFlow.js}
+A JavaScript library for training and deploying ML models in the browser and on Node.js
+Develop ML in the Browser
+Use flexible and intuitive APIs to build and train models from scratch using the low-level JavaScript linear algebra library or the high-level layers API
+Run Existing models
+Use TensorFlow.js model converters to run pre-existing TensorFlow models right in the browser.
+Retrain Existing models
+Retrain pre-existing ML models using sensor data connected to the browser, or other client-side data.TensorFlow.js is an open source WebGL-accelerated JavaScript library for machine intelligence. It brings highly performant machine learning building blocks to your fingertips, allowing you to train neural networks in a browser or run pre-trained models in inference mode. See Getting Started for a guide on installing/configuring TensorFlow.js.
+
+TensorFlow.js provides low-level building blocks for machine learning as well as a high-level, Keras-inspired API for constructing neural networks. Let's take a look at some of the core components of the library.
+
+Core Concepts in TensorFlow.js
+
+\subsection{Core Concepts}
+
+
