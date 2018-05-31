@@ -1,5 +1,5 @@
 \chapter{Architecture and Technology}
-This chapter is about introducing different software architectures and technologies that are used to build web applications. It is structured as followed. First it shall be explained why web applications offer possibilities desktop application can not, a glimpse into JavaScript will be taken. After that a more detailed look will be taken on React and its underlaying software architecture Flux. Further a web framework for managing states called Redux will be discussed.
+This chapter is about introducing different software architectures and technologies that are used to build web applications. It is structured as followed. First it shall be explained why web applications offer possibilities desktop application can not, a glimpse into JavaScript will be taken. After that a more detailed look will be taken on React and its underlaying software architecture Flux. Further a web framework for managing states called Redux and JavaScript library for machine learning within the browser TensorFlow.js will be discussed.
 
 \section{Software Application Architectures}
 Most software applications fall into one of these
@@ -407,3 +407,8 @@ Operations are performed on tensors. TensoFlow.js provides a wide variety of alg
 
 \lstinputlisting{code/grundlagen/operations.js}
 
+Models and Layers
+
+Conceptually, a model is a function that given some input will produce some desired output.
+
+In TensorFlow.js there are two ways to create models. You can use ops directly to represent the work the model does. For example:
