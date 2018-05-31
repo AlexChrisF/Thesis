@@ -392,7 +392,7 @@ It should further be mentioned that Redux destroys a key principle of React, by 
 \end{figure}
 
 \section{TensorFlow.js}
-TensforFlow.js is an open source JavaScript library for training and deploying neural networks in the browser and on Node.js. First introduced in summer 2017 it already provides intuitive APIs to build and train models from scratch in the browser. Existing models can be loaded and re-trained, also normal TensorFlow models can be imported and used. The WebGl-accelerated implementation makes it possible to train and predict in a reasonable time. There are a few core concepts of TensorFlow.js, the following subsection will go more into detail.
+TensforFlow.js is an open source JavaScript library for training and deploying neural networks in the browser and on Node.js. First introduced in spring 2018 it already provides intuitive APIs to build and train models from scratch in the browser. Existing models can be loaded and re-trained, also normal TensorFlow models can be imported and used. The WebGl-accelerated implementation makes it possible to train and predict in a reasonable time. There are a few core concepts of TensorFlow.js, the following subsection will go more into detail.
 
 \subsection{Core Concepts}
 
@@ -413,7 +413,7 @@ In TensorFlow.js models are nothing different than a function that takes an inpu
 \lstinputlisting{code/grundlagen/model.js}
 
 \subsection{Performance}
-Even though TensorFlow.js can access the local GPA it is 1.5-2 times slower than TensorFlow distributions written in Python or C++. 
+Even though TensorFlow.js can access the local GPU (Graphics Processing Unit) it is 1.5-2 times slower than TensorFlow distributions written in Python or C++. 
 Small models train faster in the browser, however large models train up to 10-15 times slower in the browser compared to TensorFlow written in Python.
 
 \subsection{Conclusion}
