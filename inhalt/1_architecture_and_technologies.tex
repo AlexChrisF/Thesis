@@ -296,7 +296,7 @@ There are no separated HTML and JavaScript files, only JavaScript. Every compone
 \lstinputlisting{code/grundlagen/Component.js}
 
 
-Each of that squares is a component and part of the whole board game application. There shall bee a value assigned to the squares, values are passed through the prop value (see Fig. \ref{fig:Grid})).
+Each of that squares is a component and part of the whole board game application. There shall bee a value assigned to the squares, values are passed through the prop value (see Fig. \ref{fig:Grid}).
 
 \lstinputlisting{code/grundlagen/ComponentWithProps.js}
 
@@ -330,7 +330,7 @@ The Square component is no longer keeping its own state, it receives the value f
 
 
 \subsection{Action- and dataflow}
-Taking the last examples it is clear that that is only passed in one way, from the top-level component to a child component. Another key principle is that actions are only passed up. For example if a nested component B is clicked or is triggered on a different event some state B shall be changed in the top-level component. That is possible because all functions that change the data in top-level component can be passed down to nested components via the props variable (see Fig. \ref{fig:DataFlow})).
+Taking the last examples it is clear that that is only passed in one way, from the top-level component to a child component. Another key principle is that actions are only passed up. For example if a nested component B is clicked or is triggered on a different event some state B shall be changed in the top-level component. That is possible because all functions that change the data in top-level component can be passed down to nested components via the props variable (see Fig. \ref{fig:DataFlow}).
 
 \begin{figure}[H]
 	\centering
@@ -357,13 +357,13 @@ Manipulating the DOM is the main thing modern, interactive web applications do. 
 
 Additionally some modern frameworks update the DOM more often than it needs to be updated. For example changing one item in a list of ten items would lead to re-rendering all ten items. React is addressing this problem by introducing a virtual DOM.
 
-The Virtual DOM is an exact representation of the HTML DOM with JavaScript. Once states have changed the virtual DOM is updated first, then the previous Virtual DOM is compared to the current Virtual DOM. Only what is different will be updated in the HTML DOM.
+The Virtual DOM is an exact representation of the HTML DOM with JavaScript. Once states have changed the virtual DOM is updated first, then the previous Virtual DOM is compared to the current Virtual DOM. Only what is different will be updated in the HTML DOM.DataFlow
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{bilder/grundlagen/VirtualDom.png}
 	\caption{Virtual DOM comparison} source: Own illustration
-	\label{fig:COMPONENT}
+	\label{fig:VirtualDom}
 \end{figure}
 
 
