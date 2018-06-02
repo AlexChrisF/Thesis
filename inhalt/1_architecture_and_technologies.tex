@@ -224,9 +224,9 @@ In Flux data flows in a single direction, the unidirectional data flow is centra
 	\label{fig:FLUX}
 \end{figure}
 
-The dispatcher takes care of handling all actions and forwarding it to the right store. The store holds the data and actions to change this data. Once data was changed the store alerts all views that are affected by this data change, causing a re-rendering.
+The dispatcher takes care of handling all actions and forwarding it to the right store. The store holds the data and actions to change this data. Once data was changed the store alerts all views that are affected by this data change, causing a re-rendering (see Fig. \ref{fig:FA})
 
-It is also possible that a view generates an action, this happens mainly through user interaction. This action is also passed to the dispatcher. 
+It is also possible that a view generates an action, this happens mainly through user interaction. This action is also passed to the dispatcher.
 
 
 \begin{figure}[H]
