@@ -130,7 +130,7 @@ Actions that do not change the DOM should be able to run asynchronously. That ma
 
 How is it possible that JavaScript offers the opportunity to run code concurrently, even though it is single threaded? The following example shall show how multi-threading is implemented in JavaScript.
 
-Every time a function in \gls{JS} is called, it is put on the call stack. The result of that function is popped out from stack. The functions on stack are executed synchronously one after another (see Fig. \ref{fig:CS})
+Every time a function in \gls{JS} is called, it is put on the call stack. The result of that function is popped out from stack. The functions on stack are executed synchronously one after another (see Fig. \ref{fig:CS}).
 
 \begin{figure}[H]
 	\centering
@@ -146,7 +146,7 @@ The callback tells what to do after the asynchronous function finished executing
 
 Once the thread finished executing it passes the callback to as so called Callback Que. The Callback Que is a simple list with all callbacks that need to be executed. 
 
-Further an event loop is responsible for checking if current stack is empty, if that's the case, the callback is put on stack and executed synchronously. The decoupling of the caller from the response allows for JavaScript to do other things while waiting for asynchronous operations to complete and their callbacks to fire (See )
+Further an event loop is responsible for checking if current stack is empty, if that's the case, the callback is put on stack and executed synchronously. The decoupling of the caller from the response allows for JavaScript to do other things while waiting for asynchronous operations to complete and their callbacks to fire (see Fig. \ref{fig:CC}).
 
 \begin{figure}[H]
 	\centering
@@ -156,7 +156,7 @@ Further an event loop is responsible for checking if current stack is empty, if 
 \end{figure}
 
 \subsection{Functional programming paradigm}
-There is no need to use functional programming in JavaScript, since this is more a philosophy question and definitely nothing somebody needs to do when programming in JavaScript.Other ways of coding, like object oriented programming, are supported in JavaScript as well. This section shall explain what functional programming is and how it is implemented in JavaScript. No global variables or states are used in functional programming, the output of a function only depends on the input arguments. \cite{Steyer2014JavaScript}
+There is no need to use functional programming in JavaScript, since this is more a philosophy question and definitely nothing somebody needs to do when programming in JavaScript.Other ways of coding, like object oriented programming, are supported in JavaScript as well. This section shall explain what functional programming is and how it is implemented in JavaScript. No global variables or states are used in functional programming, the output of a function only depends on the input arguments  (see Fig. \ref{fig:FP}). \cite{Steyer2014JavaScript}
 
 \begin{figure}[H]
 	\centering
