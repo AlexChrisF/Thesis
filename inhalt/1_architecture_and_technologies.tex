@@ -1,7 +1,7 @@
 \chapter{Architecture and Technology}
 This chapter is about introducing different software architectures and technologies that are used to build web applications. It is structured as followed. First it shall be explained why web applications offer possibilities desktop application can not. Further a glimpse into JavaScript will be taken. After that a more detailed look will be taken on React and its underlaying software architecture Flux. Further a web framework for managing states called Redux and a JavaScript library for machine learning within the browser, TensorFlow.js will be discussed.
 
-\section{Software Application Architectures}
+\section{Software application architectures}
 Most software applications fall into one of these
 categories:
 
@@ -59,17 +59,17 @@ Java is a regular, static, and highly typed programming language.
   Nevertheless they share a C related syntax and some 
   similarities regarding naming conventions. While Java is a true
   object oriented language, JavaScript has incorporated elements
-  supporting object oriented programming only over time.
+  supporting object oriented programming only over time. \cite{Bewersdorff2018ObjektorientierteProgrammierung}
   
-The following analysis shall show why Java Script is in many ways superior for web development. Jeff Attwood the co-founder of the  computer programming question-and-answer website Stack Overflow and Stack Exchange once said "Any application that can be written in \gls{JS}, will eventually be written in JavaScript". \cite{HistoryJS1} \cite{HistoryJS2} \cite{HistoryJS3}
+The following analysis shall show why Java Script is in many ways superior for web development. Jeff Attwood the co-founder of the  computer programming question-and-answer website Stack Overflow and Stack Exchange once said "Any application that can be written in \gls{JS}, will eventually be written in JavaScript". \cite{HistoryJS1} \cite{HistoryJS2} \cite{HistoryJS3} \cite{Louis2018Java}
 
-\subsection{JavaScript Distributed Architectures}
+\subsection{JavaScript distributed architectures}
 
 Most modern web designs rely on a three-tier architecture (Fig. 
-\ref{fig:ig:TT}). On the server side computation is done and data 
+\ref{fig:TT}). On the server side computation is done and data 
 is stored in databases. The client fetches data from the server and 
 makes it accessible at the user interface. Often the user is able 
-to change data on the client side. 
+to change data on the client side. \cite{GOLL}
 
 \begin{figure}[H]
 	\centering
@@ -105,13 +105,13 @@ That's big step, distributed systems that can use shared modules. It even affect
 \end{figure}
 
 
-\subsection{Multi-Platform Support}
+\subsection{Multi-Platform support}
 
 Deploying an application for the web browser is only one aspect of modern web development, often a separate implementation is needed for mobile devices or even desktop implementations. Two major operating systems are currently dominating the smart-phone market Android and IOS. 
 
 Both support native App developing but that brings back the problem of having to implement the same functionality twice. Sure smart-phone Apps are different from browser based applications, starting with the touch event and ending up with totally different layouts. 
 
-With JavaScript developers can take advantage of modern frameworks like React Native or Electron, which give the possibility to code in \gls{JS}, the JavaScript is communicating natively with implemented components written in Java on Android, Objective C on iOS, CSharp on Windows via an abstraction called bridge. Everytime \gls{JS} is called it forwards the call to the native code implementation, the response is passed back to the implemented abstraction \gls{JS}.
+With JavaScript developers can take advantage of modern frameworks like React Native or Electron, which give the possibility to code in \gls{JS}, the JavaScript is communicating natively with implemented components written in Java on Android, Objective C on iOS, CSharp on Windows via an abstraction called bridge. Everytime \gls{JS} is called it forwards the call to the native code implementation, the response is passed back to the implemented abstraction \gls{JS}. \cite{Purewal2014LearningWeb}
 
 \begin{figure}[H]
 	\centering
@@ -121,7 +121,7 @@ With JavaScript developers can take advantage of modern frameworks like React Na
 \end{figure}
 
 
-\subsection{Single Threading and Concurrency}
+\subsection{Single threading and concurrency}
 The single treaded paradigm and non blocking architecture \gls{JS} is bond to, can be considered a weakness. Developing with JavaScript will generate errors and behavior that is perplexing . This section is about analyzing why \gls{JS} is relying on single threading and how it is still possible to add concurrency.
 
 \gls{JS} was developed to manipulate the DOM, the DOM is a limited resource. Executing two pieces of code, asynchronously changing the same part of DOM would not be good. Given this single purpose it was decided to make JavaScript single threaded.
@@ -155,7 +155,7 @@ Further an event loop is responsible for checking if current stack is empty, if 
 	\label{fig:CC}
 \end{figure}
 
-\subsection{Functional Programming Paradigm}
+\subsection{Functional programming paradigm}
 There is no need to use functional programming in JavaScript, since this is more a philosophy question and definitely nothing somebody needs to do when programming in JavaScript.Other ways of coding, like object oriented programming, are supported in JavaScript as well. This section shall explain what functional programming is and how it is implemented in JavaScript. No global variables or states are used in functional programming, the output of a function only depends on the input arguments.
 
 \begin{figure}[H]
@@ -186,9 +186,9 @@ Data mutation shall be avoided.
 
 \newpage
 
-\section{Software Patterns For Web-Development}
+\section{Software patterns for web-development}
 
-\subsection{Classic MVC Model}
+\subsection{Classic MVC model}
 For decades it was best practice to use the Model View Controller software architecture. The model stores the data presented in a view, in simple systems the model may contain business logic.
 
 The model shall be independent of views and controllers. In case the model changes the controller may inform the views (passive Model). With an alternative active model implementation, the model informs the views. One model can have multiple views.
@@ -212,7 +212,7 @@ React tries to get rid of that by introducing a different architecture called Fl
 
 \subsection{Flux}
 
-\subsubsection{Structure and Data Flow}
+\subsubsection{Structure and data flow}
 
 In Flux data flows in a single direction, the unidirectional data flow is central to Flux. Dispatcher, stores and views are independent nodes with different inputs and outputs. The actions simply consist of objects with the new data.
 
@@ -249,7 +249,7 @@ Stores contain the application's logic and states. This role can be considered s
 
 For example Facebook's Lookback Video Editor utilized a TimeStore that kept track of the playback time position and the playback state. On the other hand, the same application's ImageStore kept track of a collection of images.
 
-\subsubsection{Views and Conroller-Views}
+\subsubsection{Views and conroller-views}
 
 In React all views are composable and freely re-renderable. at the top of each view, the highest in hierarchy, there is a view that listens to events that are sent by the store. It is called a controller-view. 
 
@@ -310,7 +310,7 @@ Now when clicked on a square, this square shall show the 'X'. The value can now 
 
 If this.setState is called, an update is scheduled by React and the value is merged in the correct component state. Furthermore the component and all of its descendants are re-rendered. If a Square was clicked it would now show a 'X' in the grid.
 
-\subsection{Lifting State Up}
+\subsection{Lifting state up}
 Often data needs to be aggregated from multiple child components. Then it makes sense to lift all states up to a top-level component. The parent component then passes down the individual states for the child components.
 
 E.g. in a Tic Tac Toe game, to determine who has won, the value of all squares components would need to be checked. That is technically doable, but a better approach is to save all states in the parent component and the parent component can simply check one array, in order to determine who has won. 
@@ -325,7 +325,7 @@ The Square component is no longer keeping its own state, it receives the value f
 \end{figure}
 
 
-\subsection{Action- and Dataflow}
+\subsection{Action- and dataflow}
 Taking the last examples it is clear that that is only passed in one way, from the top-level component to a child component. Another key principle is that actions are only passed up. For example if a nested component B is clicked or is triggered on a different event some state B shall be changed in the top-level component. That is possible because all functions that change the data in top-level component can be passed down to nested components via the props variable.
 
 \begin{figure}[H]
@@ -336,7 +336,7 @@ Taking the last examples it is clear that that is only passed in one way, from t
 \end{figure}
 
 
-\subsection{High-Order Components}
+\subsection{High-Order components}
 As already knwon from the JavaScript introduction chapter
 a high-level function takes another function as an argument. Similar to that a High-Order Component is simply a high-order function that takes a stateless component and returns the changed component. This is very practical since it gives the possibilty to give them extra functionality or to even change the wrapped component. 
 
