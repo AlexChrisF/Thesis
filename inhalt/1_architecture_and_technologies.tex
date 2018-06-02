@@ -319,24 +319,24 @@ Often data needs to be aggregated from multiple child components. Then it makes 
 
 E.g. in a Tic Tac Toe game, to determine who has won, the value of all squares components would need to be checked. That is technically doable, but a better approach is to save all states in the parent component and the parent component can simply check one array, in order to determine who has won. 
 
-The Square component is no longer keeping its own state, it receives the value from its parent Board. It informs the parent when it was clicked. These components are called controlled components. 
+The Square component is no longer keeping its own state, it receives the value from its parent Board. It informs the parent when it was clicked. These components are called controlled components  (see Fig. \ref{fig:TopLevel})).
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{bilder/grundlagen/topLevelComponent.png}
 	\caption{Top-Level Comonent} source: Own illustration
-	\label{fig:RL}
+	\label{fig:TopLevel}
 \end{figure}
 
 
 \subsection{Action- and dataflow}
-Taking the last examples it is clear that that is only passed in one way, from the top-level component to a child component. Another key principle is that actions are only passed up. For example if a nested component B is clicked or is triggered on a different event some state B shall be changed in the top-level component. That is possible because all functions that change the data in top-level component can be passed down to nested components via the props variable.
+Taking the last examples it is clear that that is only passed in one way, from the top-level component to a child component. Another key principle is that actions are only passed up. For example if a nested component B is clicked or is triggered on a different event some state B shall be changed in the top-level component. That is possible because all functions that change the data in top-level component can be passed down to nested components via the props variable (see Fig. \ref{fig:DataFlow})).
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{bilder/grundlagen/dataFlow.png}
 	\caption{Action- and dataflow} source: Own illustration
-	\label{fig:RL}
+	\label{fig:DataFlow}
 \end{figure}
 
 
