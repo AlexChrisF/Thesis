@@ -130,7 +130,7 @@ Actions that do not change the DOM should be able to run asynchronously. That ma
 
 How is it possible that JavaScript offers the opportunity to run code concurrently, even though it is single threaded? The following example shall show how multi-threading is implemented in JavaScript.
 
-Every time a function in \gls{JS} is called, it is put on the call stack. The result of that function is popped out from stack. The functions on stack are executed synchronously one after another.
+Every time a function in \gls{JS} is called, it is put on the call stack. The result of that function is popped out from stack. The functions on stack are executed synchronously one after another (see Fig. \ref{fig:CS})
 
 \begin{figure}[H]
 	\centering
