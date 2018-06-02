@@ -85,10 +85,10 @@ languages is available, Java, CSharp, PHP, Ruby these are just the
 most famous one.
 
 Once a user is added on client side, code is needed there in JavaScript. Same action needs to be implemented in a different language on server, 
-therefore a second implementation is needed for the same action.
-But the JavaScript ecosystem is undergoing rapid growth, with Node.js \gls{JS} is coming to the server and developers are now able to create complete applications in \gls{JS}.
+therefore a second implementation is needed for the same action (see Fig. \ref{fig:DS1})
+But the JavaScript ecosystem is undergoing rapid growth, with Node.js \gls{JS} is coming to the server and developers are now able to create complete applications in \gls{JS}. 
 
-That's big step, distributed systems that can use shared modules. It even affects the job market, front-end developers and back-end developers have been two separated jobs for over decades but now are one. People do not need to learn two languages anymore if they want to do full-stack web development, everything is covered with JavaScript.
+That's big step, distributed systems that can use shared modules \ref{fig:DS2}). It even affects the job market, front-end developers and back-end developers have been two separated jobs for over decades but now are one. People do not need to learn two languages anymore if they want to do full-stack web development, everything is covered with JavaScript.
 
 \begin{figure}[H]
 	\centering
@@ -146,7 +146,7 @@ The callback tells what to do after the asynchronous function finished executing
 
 Once the thread finished executing it passes the callback to as so called Callback Que. The Callback Que is a simple list with all callbacks that need to be executed. 
 
-Further an event loop is responsible for checking if current stack is empty, if that's the case, the callback is put on stack and executed synchronously. The decoupling of the caller from the response allows for JavaScript to do other things while waiting for asynchronous operations to complete and their callbacks to fire. 
+Further an event loop is responsible for checking if current stack is empty, if that's the case, the callback is put on stack and executed synchronously. The decoupling of the caller from the response allows for JavaScript to do other things while waiting for asynchronous operations to complete and their callbacks to fire (See )
 
 \begin{figure}[H]
 	\centering
