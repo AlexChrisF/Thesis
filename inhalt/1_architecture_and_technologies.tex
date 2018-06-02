@@ -214,7 +214,7 @@ React tries to get rid of that by introducing a different architecture called Fl
 
 \subsubsection{Structure and data flow}
 
-In Flux data flows in a single direction, the unidirectional data flow is central to Flux. Dispatcher, stores and views are independent nodes with different inputs and outputs. The actions simply consist of objects with the new data. The following section are inspired by the official Flux guide \cite{Flux}
+In Flux data flows in a single direction, the unidirectional data flow is central to Flux. Dispatcher, stores and views are independent nodes with different inputs and outputs. The actions simply consist of objects with the new data. The following section are inspired by the official Flux guide \cite{Flux}.
 
 
 \begin{figure}[H]
@@ -319,7 +319,7 @@ Often data needs to be aggregated from multiple child components. Then it makes 
 
 E.g. in a Tic Tac Toe game, to determine who has won, the value of all squares components would need to be checked. That is technically doable, but a better approach is to save all states in the parent component and the parent component can simply check one array, in order to determine who has won. 
 
-The Square component is no longer keeping its own state, it receives the value from its parent Board. It informs the parent when it was clicked. These components are called controlled components  (see Fig. \ref{fig:TopLevel})).
+The Square component is no longer keeping its own state, it receives the value from its parent Board. It informs the parent when it was clicked. These components are called controlled components  (see Fig. \ref{fig:TopLevel}).
 
 \begin{figure}[H]
 	\centering
