@@ -128,7 +128,7 @@ The single treaded paradigm and non blocking architecture \gls{JS} is bond to, c
 
 Actions that do not change the DOM should be able to run asynchronously. That makes sense, since fetching data from the server or reading a large list of files can take a lot of time and would block the browser, buttons would not be clickable anymore and any rendering would stop. 
 
-How is it possible that JavaScript offers the opportunity to run code concurrently, even though it is single threaded? The following example how multi-threading is implemented in JavaScript.
+How is it possible that JavaScript offers the opportunity to run code concurrently, even though it is single threaded? The following example shall show how multi-threading is implemented in JavaScript.
 
 Every time a function in \gls{JS} is called, it is put on the call stack. The result of that function is popped out from stack. The functions on stack are executed synchronously one after another.
 
