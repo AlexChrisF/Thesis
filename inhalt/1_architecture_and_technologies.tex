@@ -214,7 +214,7 @@ React tries to get rid of that by introducing a different architecture called Fl
 
 \subsubsection{Structure and data flow}
 
-In Flux data flows in a single direction, the unidirectional data flow is central to Flux. Dispatcher, stores and views are independent nodes with different inputs and outputs. The actions simply consist of objects with the new data. The following section are inspired by the official Flux guide \cite{Flux}.
+In Flux data flows in a single direction, the unidirectional data flow is central to Flux (see Fig. \ref{fig:FLUX}). Dispatcher, stores and views are independent nodes with different inputs and outputs. The actions simply consist of objects with the new data.The following section are inspired by the official Flux guide \cite{Flux}.
 
 
 \begin{figure}[H]
@@ -224,7 +224,7 @@ In Flux data flows in a single direction, the unidirectional data flow is centra
 	\label{fig:FLUX}
 \end{figure}
 
-The dispatcher takes care of handling all actions and forwarding it to the right store. The store holds the data and actions to change this data. Once data was changed the store alerts all views that are affected by this data change, causing a re-rendering (see Fig. \ref{fig:FA})
+The dispatcher takes care of handling all actions and forwarding it to the right store. The store holds the data and actions to change this data. Once data was changed the store alerts all views that are affected by this data change, causing a re-rendering (see Fig. \ref{fig:FA}).
 
 It is also possible that a view generates an action, this happens mainly through user interaction. This action is also passed to the dispatcher.
 
