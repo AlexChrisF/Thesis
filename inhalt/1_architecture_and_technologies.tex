@@ -214,7 +214,7 @@ React tries to get rid of that by introducing a different architecture called Fl
 
 \subsubsection{Structure and data flow}
 
-In Flux data flows in a single direction, the unidirectional data flow is central to Flux. Dispatcher, stores and views are independent nodes with different inputs and outputs. The actions simply consist of objects with the new data. \cite{Flux}
+In Flux data flows in a single direction, the unidirectional data flow is central to Flux. Dispatcher, stores and views are independent nodes with different inputs and outputs. The actions simply consist of objects with the new data. The following section are inspired by the official Flux guide: \cite{Flux}
 
 
 \begin{figure}[H]
@@ -236,6 +236,14 @@ It is also possible that a view generates an action, this happens mainly through
 	\label{fig:FA}
 \end{figure}
 
+
+
+\subsubsection{Stores}
+Stores contain the application's logic and states. This role can be considered somehow similar to a model in the traditional MVC, the difference is that stores manage the data of many objects and not a single record of data like ORM models do. They manage the application state for a whole domain. It is the single source if truth.
+
+For example Facebook's Lookback Video Editor utilized a TimeStore that kept track of the playback time position and the playback state. On the other hand, the same application's ImageStore kept track of a collection of images.
+
+
 \subsubsection{Dispatchers}
 Dispatchers can be considered as a central hub that is managing all data flows in a Flux application.
 
@@ -244,10 +252,6 @@ A dispatcher has no real intelligence of its own, it only provides a simple mech
 
 This becomes more important when big applications shall be built. The dispatcher then handles dependencies between different stores, he takes care of updating the different stores in a specific order.
 
-\subsubsection{Stores}
-Stores contain the application's logic and states. This role can be considered somehow similar to a model in the traditional MVC, the difference is that stores manage the data of many objects and not a single record of data like ORM models do. They manage the application state for a whole domain. 
-
-For example Facebook's Lookback Video Editor utilized a TimeStore that kept track of the playback time position and the playback state. On the other hand, the same application's ImageStore kept track of a collection of images.
 
 \subsubsection{Views and conroller-views}
 
@@ -264,7 +268,7 @@ The Flux architecture is improving data consistency. The unidirectional data flo
 
 \section{React and Flux}
 
-Another key technology used in this project, is React. React is a JavaScript library for developing user interfaces. 
+Another key technology used in this project, is React. A JavaScript library for developing user interfaces. 
 
 Back in 2011, Facebook noticed that it was getting hard to maintain their Application and to run it flawlessly, because of the growing number of features. Many people were hired and the team size expanded dramatically. With the growing team size it took longer to publish urgent updates, too many people were involved and concerns could not be separated in a satisfying manner.
 
