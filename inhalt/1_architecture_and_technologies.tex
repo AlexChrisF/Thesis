@@ -357,7 +357,7 @@ Manipulating the DOM is the main thing modern, interactive web applications do. 
 
 Additionally some modern frameworks update the DOM more often than it needs to be updated. For example changing one item in a list of ten items would lead to re-rendering all ten items. React is addressing this problem by introducing a virtual DOM.
 
-The Virtual DOM is an exact representation of the HTML DOM with JavaScript. Once states have changed the virtual DOM is updated first, then the previous Virtual DOM is compared to the current Virtual DOM. Only what is different will be updated in the HTML DOM.DataFlow
+The Virtual DOM is an exact representation of the HTML DOM with JavaScript. Once states have changed the virtual DOM is updated first, then the previous Virtual DOM is compared to the current Virtual DOM. Only what is different will be updated in the HTML DOM (see Fig. \ref{fig:VirtualDom}).
 
 \begin{figure}[H]
 	\centering
@@ -386,13 +386,12 @@ Redux adds a lot of overhead to an application, a lot of more files and code are
 \item Keeping all of the states in a top-level component is no longer sufficient.
 \end{itemize}
 
-It should further be mentioned that Redux destroys a key principle of React, by giving the possibility to access the state from all components in an application directly. It is no longer obvious what data is used in which component. The following illustration shall undermine this thesis.
-
+It should further be mentioned that Redux destroys a key principle of React, by giving the possibility to access the state from all components in an application directly. It is no longer obvious what data is used in which component (see Fig. \ref{fig:Redux}).
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{bilder/grundlagen/reduxStore.png}
 	\caption{Redux store} source: Own illustration
-	\label{fig:COMPONENT}
+	\label{fig:Redux}
 \end{figure}
 
 \section{TensorFlow.js}
