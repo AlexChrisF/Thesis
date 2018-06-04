@@ -376,13 +376,13 @@ Every time the state of a component changes,
 the render function is called and the HTML is re-rendered with the changed data.
 Components can be nested, for example a board game that consists of squares (see Fig. \ref{fig:Grid}).
 
-\lstinputlisting{code/grundlagen/Component.js}[label=1, caption=Nested square component]
+\lstinputlisting[caption=Nested square component]{code/grundlagen/Component.js}
 
 Each square is a component and part of the whole board game application.
 There shall be a value assigned to the squares. Values are passed down to lower components via the 
 "props" variable. 
 
-\lstinputlisting{code/grundlagen/ComponentWithProps.js}
+\lstinputlisting[caption= Passing down variables with props]{code/grundlagen/ComponentWithProps.js}
 
 \begin{figure}[H]
 	\centering
