@@ -1,58 +1,82 @@
 \chapter{Deep Learning}
 
-Not only in Computer Vision, such as object detection but also in natural language processing or speech recognition, and even human-level video game play deep neural networks are used to solve domain specific tasks. In this chapter it shall be explained how those networks function by going into details with a feed-forward neural network. Furthermore a glimpse is taken about tricks of the trade such as batch normalization and initialization.
+Deep learning is a class of neural network optimization methods for networks that have
+ a significant number of hidden layers between their input and output layer.
+  Compared to learning algorithms of more simple network structures, the methods of 
+  deep learning offer a stable learning success even in the presence of numerous hidden layers.
 
+Deep learning has been successfully applied to object detection in computer vision, in natural language processing,
+ and speech recognition. In this chapter we will explain how such artificial neural networks 
+ function by looking at feed-forward network as an example. 
 
-\section{Feed-Forward Neural Networks}
-A feed-forward neural network consist of one input layer, H hidden layers and one output layer. Each layer consist of units (or neurons) where each unit of a given layer is fully- connected to every unit of the previous layer. The graphical representation can be described mathematically as a combination of matrix multiplication and activation functions. The activation function models when an artificial neuron fires and is usually a non-linearity. In theory, it is this non-linear activation function, which allows the network to learn any function approximation. Each unit in a hidden layer can be mathematically described by:
+\section{Feed-forward neural networks}
 
-\begin{equation}
+A feed-forward network comprises one input layer, H hidden layers and one output layer.
+Each layer consists of a number of elements called "neurons". Each neuron of any given layer is 
+fully connected to each neuron
+of the previous layer. Mathematically, a neural network is represented by a combination of 
+matrix multiplication and
+activation functions. An activation function determines when a neuron fires.
+It usually is nonlinear. The nonlinear characteristic of the activation function is 
+what enables the network to learn. Each neuron in a hidden layer can be described by equations \ref{eq:1} and  \ref{eq:2}
+
+\begin{equation} \label{eq:1}
 	y_{j} = f(z_{j})
 \end{equation}
 
-\begin{equation}
+\begin{equation} \label{eq:2}
 z_{j} = \sum w_{ij}*x_{i} + b_{j}
 \end{equation}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{bilder/grundlagen/fast-forward.png}
-	\caption{Schematic view of a FCN. Schematic of a simple two layer fully connected neural network (FCN)} source: Own illustration
+	\includegraphics[width=1.0\linewidth]{bilder/grundlagen/fast-forward.png}
+	\caption{Schematic view of a  simple two layer fully connected neural network (FCN)}
 	\label{fig:FCN}
 \end{figure}
 
-
-
-Where \( y_{i} \) is the output of the unit from the current layer. The output is transformed with a non-linear activation function. \(z\) is called the preactivation and \(w\) denotes the edge weights. \( x_{i} \) is the output of a unit from the previous layer. At every layer first the total input \(z\) is computed, \(z\) is the weighted sum of the outputs from the layer before. After that a non linear function \( f(\cdot) \)is applied to \(z\) in order to get the output \( y_{j} \) of the unit. 
-
-All differential functions can be used as a activation function of a neural network. Most common activation functions are sigmoid,  \(f(z) = \frac{1}{exp(-z)}\), the hyperbolic tangent, \(f(z) = \frac{exp(z)-exp(-z)}{exp(z)+exp(-z)}\) or the rectifier linear unit (ReLU) \(f(z) = max(0; z)\). ReLu will be used for all future examples.
+The outputs of the preceding layer are each weighted with a weight \(w_{ij}\) before they are accumulated.
+The resulting sum is shifted by adding a bias \(b_{j}\) to generate the input \(z_{j}\) for the 
+activation function \( f(\cdot) \).
+The output of the activation function \(y_{j}\) is then taken as the input for the next 
+hidden layer or output layer.
+ 
+ Any continuous functions can be used as activation functions of a neural network. 
+ Most common activation functions are sigmoid,  \(f(z) = \dfrac{1}{e^{-z}}\), 
+ the hyperbolic tangent, \(f(z) = \frac{exp(z)-exp(-z)}{exp(z)+exp(-z)}\) or the 
+ rectifier linear unit (ReLu) \(f(z) = max(0; z)\). ReLu will be used for all future examples.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{bilder/grundlagen/sigmoid.png}
-	\caption{Sigmoid And ReLu Activation Function} source:\cite{Sigmoid}
+	\caption{Sigmoid And ReLu activation function \cite{Sigmoid}}
 	\label{fig:Sigmoid}
 \end{figure}
 
 
 \subsection{Backpropagation}
 
-To train a neural network two things need to be done. First a forward pass, second an error backpropagation. Given a certain input, a forward pass calculates the output of each unit. A predefined cost function \(E\) then compares the resulting outputs \(y_{out}\) with the correct answer and determines the error. A common cost function for example is 
-squared error loss.
-
-\begin{equation}
-E=\sum\dfrac{1}{2} (target-y_{out}^2) 
-\end{equation}
-	
-Given this error it is now possible to check how weights need to be adjusted in order to bring the \(E\) to a minimum. By applying chain rule of derivatives. 
-\begin{equation}
-\frac{\partial z}{\partial x} = \frac{\partial z}{\partial y} \frac{\partial y}{\partial x}
+Training a neural network means iteratively applying a forward pass followed by an error backpropagation.
+During the forward pass the outputs for each neuron are calculated based on its inputs.
+The resulting outputs \(y_{out}\) are then compared with the correct answer via a cost function  \(E\).
+A common cost function for example is squared error loss (see equation \ref{eq:3}):
+ 
+\begin{equation} \label{eq:3}
+	E=\sum\dfrac{1}{2} (target-y_{out}^2) 
 \end{equation}
 
-Taking the Error in consideration the algebra looks like this:
+Based on the output of \(E\) it is now possible to check how weights need to be 
+adjusted in order to minimize the error.
+Applying the chain rule we get equation \ref{eq:4}. 
 
-\begin{equation}
+\begin{equation} \label{eq:4}
+	\frac{\partial z}{\partial x} = \frac{\partial z}{\partial y} \frac{\partial y}{\partial x}
+\end{equation}
+
+Considering the error  \(E\) we get equation \ref{eq:5}
+
+\begin{equation}  \label{eq:5}
 \Delta_{W}E =
 \frac{\partial E}{\partial W_{l}} =
 \frac{\partial E}{\partial y_{out}}
@@ -61,65 +85,82 @@ Taking the Error in consideration the algebra looks like this:
 \frac{\partial y_{n-1}}{\partial z_{n-1}}
 \end{equation}
 
-Using the calculated gradient $\Delta_{W}E(y_{out}) $ it is now possible to determine next update for the weights matrix by a gradient descent update:
+Using the calculated gradient $\Delta_{W}E(y_{out})$  it is now possible 
+to determine the next weight matrix update using a gradient descent (equation \ref{eq: 6}):
 
-\begin{equation}
+\begin{equation} \label{eq:6}
 W_{l}^{t+1}=
 W_{l}^{t}-\eta\Delta_{W_{l}^{t}}E(y_{yout)}
 \end{equation}
 
-Where \(W^{t}\), \(W^{t+1}\) are the current weights and the weight matrix for the updated weights. \(\eta\) is the learning rate.
+where \(W^{t}\), \(W^{t+1}\) are the current and the updated weight matrices, respectively,
+and  \(\eta\) is the learning rate.
 
-\subsection{Weight Update}
-It requires a lot of computation time to calculate the gradient from whole dataset. Mini-batches can be used to calculate the gradient only based on a few sampled data points. Using this analytic gradient a parameter update is performed. There are several ways to do this update. But the most common way is Stochastic gradient descent (SGD). 
-Parameters are simply changed along the negative gradient direction in order to minimize the error.
+\subsection{Weight update}
+Calculating the gradient for a complete dataset can take a lot of computation time.
+To reduce the amount of computation required
+mini-batches can be used to calculate the gradient only based on a few sampled data points. 
+Using this analytic gradient a parameter update is performed. There are several ways to perform this update,
+the most common one being the stochastic gradient descent (SGD).
+In this algorithm, parameters are simply changed along the negative gradient 
+direction in order to minimize the error.
 
 
 \subsection{Initialization}
-To train a neural network initial weights need to be set. The most common way is a random initialization were every value is randomly set for example from a Gaussian.
+A neural network needs its weights initialized before it can be trained.
+Random initialization is the most common way to create the initial weights.
 
 \subsection{Batch normalization}
-To avoid too big values or too small values in data a normalization is performed.
+To avoid numerical problems due to extreme values the input data is 
+normalized (see equation \ref{eq:7}).
 
-\begin{equation}
-x \Rightarrow \hat{x} = \dfrac{x-\mu}{\sigma} \Rightarrow x_{norm} = \gamma \hat{x} + \beta
+\begin{equation}\label{eq:7}
+	x \Rightarrow \hat{x} = \dfrac{x-\mu}{\sigma} \Rightarrow x_{norm} = \gamma \hat{x} + \beta
 \end{equation}
 
-\(\mu\) and \(\sigma\) are mean standard deviation of the dataset. 
-\(gamma\)\ and \(\sigma\) scale and shift the parameters. Batch normalization accelerates training time and makes a deep neural network less sensitive to initialization issues.
+\(\mu\) and \(\sigma\) are the mean and the  standard deviation of the dataset, respectively. 
+\(\gamma\)\ and \(\sigma\) scale and shift the parameters. Batch normalization accelerates 
+training time and makes a deep neural network less sensitive to initialization issues.
 
 \section{Classification}
-A really common problem for neural networks is the classification of images, or more general the classification of data into a specific category. The best performing neural network architecture for classifying images are convolutional neural networks. All convolutional neural networks consist of convolutional layers followed by pooling layers and some fully connected layers.
+A common task for neural networks is the classification of images, or more general the classification of data into a specific category. The best performing neural network architectures for classifying images are 
+convolutional neural networks (CNN). 
+All convolutional neural networks consist of convolutional layers followed by pooling 
+layers and some fully connected layers.
 
 \subsection{Convolutional layer}
-In the convolutional layer several kernels are applied to extract spacial related features. Each output from the the convolutional layer is called a feature-map. Each feature-map was created by a different convolutional kernel of the layer. 
+In a convolutional layer several kernels are applied to extract spacial related features. Each output from the the convolutional layer is called a feature-map. Each feature-map was created by a different convolutional kernel of the layer. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{bilder/grundlagen/convolution.png}
-	\caption{Schematic view of a Convolutional Neural Network (CNN)} source:\cite{Dao}
+	\caption{Schematic view of a Convolutional Neural Network (CNN) (from \cite{Dao})}
 	\label{fig:CNN}
 \end{figure}
 
 \subsection{Pooling layer}
-After features were extracted into feature maps the pooling layer reduces the size of the feature maps and makes the computation tractable. A very simple implementation of a pooling layer is the max-pooling layer, which uses a sliding windows over the input and selects the maximum of each window.
+After features have been extracted into feature maps,  the pooling layer reduces the 
+size of the feature maps and makes them computationally  tractable. A simple implementation 
+of a pooling layer is the max-pooling layer, which uses a sliding windows over the input and 
+selects the maximum of each window.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{bilder/grundlagen/pooling.png}
-	\caption{Pooling layer - Stacked convolutions can cause very large feature maps, making
-the next convolution computationally intractable. Max pooling is a simple
-and effective way to downsample the feature maps} source:\cite{Dao}
+	\caption{Pooling layer (from\cite{Dao})}
 	\label{fig:Pooling}
 \end{figure}
 
 \subsection{Data augmentation}
-Convolutional neural networks need a lot of data to generate suffice output. If not enough data can be provided the data can be artificially augmented by using different approaches. Pictures can be turned or flipped, cropped, blurred or even resized. This makes it possible to generate a lot of data which can be used to further improve training.
+Convolutional neural networks need a lot of data to generate satisfactory output. \index{data augmentation}
+If not enough data can be provided the data can be artificially augmented by using different approaches.
+images can be turned or flipped, cropped, blurred or even resized. This makes it 
+possible to generate a lot of data which can be used to further improve training.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{bilder/deep_learning/data_aug_basic.png}
-	\caption{Data augmentation} source:\cite{Ratner2017}
+	\caption{Data augmentation(from  \cite{Ratner2017})}
 	\label{fig:COMPONENT}
 \end{figure}
 
