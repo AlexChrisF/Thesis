@@ -394,7 +394,7 @@ There shall be a value assigned to the squares. Values are passed down to lower 
 Squares that have been clicked on shall show an 'X'. This value can be considered a local state.
 It is definitely a private part of the square. First an initial state needs to be added.
 
-\lstinputlisting{code/grundlagen/ComponentWithState.js}
+\lstinputlisting[caption=Components with states]{code/grundlagen/ComponentWithState.js}
 
 When \texttt{this.setState()} is called, an update is scheduled by React and the value is merged in the correct component state. Furthermore the component and all of its descendants are re-rendered. If a square was clicked it would now show an 'X' in the grid.
 
