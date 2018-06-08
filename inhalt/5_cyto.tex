@@ -5,13 +5,24 @@ With React and TensorFlow.js a fully web-based design was possible. No installat
 No data will be uploaded to any server, all data never leaves the browser which makes CYTO AI very performant and sets a high standard of privacy at the same time.
 The following sections shall explain how CYTO AI works and which techniques and architectures were used to build it.
 
-\subsection{System overview}
-First pictures need to be uploaded by clicking on the upload button, whole folders can be selected. Mind that also all images in subfolders will be uploaded. In order to categorize images, categories need to be created. That is possible by clicking on the plus icon in the categories list. After all necessary categories have been created images can be annotated.
-There are several was to annoate an image. It is possible to drag an image and drop it on the wished category. A different way is to click on one picture in order to select it an then use the keyboard to annotate the image. Following keys are supported to annotate an image:
+\subsection{Workflow overview}
+
+The workflow starts with the creation of categories. Each image to be classified will have to be assigned to a category.
+
+Now the images need to be made available to the application.
+They are being uploaded to the local browser cache.
+It is possible to select entire folders which will result in being all images in that folder and their sub-folders being uploaded.
+
+Once all images have been uploaded a knowledgeable user has
+to classify them by dragging them to the respective category field.
+
+
+
+%There are several ways to annoate an image. It is possible %to drag an image and drop it on the wished category. A %different way is to click on one picture in order to select %it an then use the keyboard to annotate the image. %Following keys are supported to annotate an image:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{bilder/cyto/Ablaufdiagramm.png}
+	\includegraphics[scale=0.5]{bilder/cyto/Ablaufdiagramm.png}
 	\caption{Workflow}
 	\label{fig:Workflow}
 \end{figure}
