@@ -1,1 +1,28 @@
 \chapter{Summary and Outlook}
+
+As Samuel Buttler used to say: "Brevity is very good where,
+where we are and are not understood." So I like to keep this summary rather short.
+
+At the start of the project we had a very powerful but
+somewhat difficult to install and use classification
+ application written in Python with more than 27.000 lines of code. 
+It looked like
+an almost impossible task to port such significant piece of
+work to an entire new architecture and completely new technologies in just a few months.
+
+Now at the end of this work and in cooperation with some 
+highly talented people it looks like the decision to
+ move to the new web centric development paradigm has 
+ paid for itself.
+
+All major technological issues could be resolved and there seems to be reason that continuing this way would not result in less development effort and better user experience compared to the traditional way of implementation.
+
+What is still to be done?
+
+Thus far, the tool can classify entire images. A big step forward would be the capability to first segment images,, that is to locate image areas with objects of interest. 
+
+This would place enormous demands on the tool and would
+require another substantial development effort. The user interface would have to be redesigned so that 
+images could be annotated.  
+
+Furthermore, it will soon be possible to export models (trained nets) with Tensorflow.js. The declared aim of Goggle is to make this possible in the upcoming versions (current version 0.10). It is conceivable to make the exported models accessible to other users via a web platform. 
