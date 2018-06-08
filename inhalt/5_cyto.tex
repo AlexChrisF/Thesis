@@ -49,6 +49,8 @@ can be shared with others.
 \section{Working with CYIO AI}
 
 \subsection{Creating categories}
+By clicking on the add button it is possible to create a new
+category.
 
 \subsection{Uploading images}
 
@@ -89,8 +91,13 @@ By that all unlabeled images will be given a category and a number will be shown
 
 To save all labels and categories and settings the button can be pressed. To import again the "open" button can be used.
 
+\section{IDE setup}
 
-\subsection{System architecture}
+\section{Package management}
+
+\section{The edit-build-debug cycle}
+
+\subsection{System architecture overview}
 The following diagram shall give an overview of how responsibilities are distributed over the system.
 
 \begin{forest}
@@ -141,7 +148,12 @@ The following diagram shall give an overview of how responsibilities are distrib
 API contains all files and functionality needed for the machine learning classifying task. Folder src contains all components, tests and Redux related files. 
 In order to explain how this structure works a further component shall be added.
 
+
+\section{Adding a component}
 First a new component "CategoryList" is created. CategoryList shall simply show a list of categories. 
+
+
+
 
 \lstinputlisting{code/cyto/categoryList.js}
 
@@ -251,6 +263,10 @@ The structure will now look like this:
 \end{forest}
 
 In short for each added component that needs access to the states a connector needs to be created. Actions and reducers also need to be created to change the state, if not already existing.
+
+\subsection{Adding components}
+
+
 
 \subsection{Machine learning API}
 The machine learning API was built with TensorFlow.js. Every time the "fit" button was clicked an asynchronous API call is made. The calls look like following:
