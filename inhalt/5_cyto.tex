@@ -218,9 +218,6 @@ In order to explain how this structure works a further component shall be added.
 \section{Adding a component}
 First a new component "CategoryList" is created. CategoryList shall simply show a list of categories. 
 
-
-
-
 \lstinputlisting{code/cyto/categoryList.js}
 
 The data shall be fetched from a variable categories, placed in the Redux store. In order to fetch this data the component shall be connected to the Redux store so a High-Order Component CategoryListConnector is created. High-Order components wrap a component and add some functionalities in this case it adds the possibility to access the categories array in Redux store. 
