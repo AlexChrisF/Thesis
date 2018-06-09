@@ -259,16 +259,16 @@ The connector provides access to the \texttt{categories} array in the Redux stor
 
 \lstinputlisting[caption=Connector component]{code/cyto/connectedCategory.js}
 
-Further it shall be possible to add another category to the category list, therefore an action is needed that takes the new category name and the category color as a payload.
+Further it shall be possible to add a new category to the category list. Therefore an action is needed that takes the new category name and the category color as a payload.
 
 \lstinputlisting[caption=Actions for changing categories]{code/cyto/actions.js}
 
-A reducer will now be called given and the action will be passed to it.
+A reducer will now be called and the action will be passed to it as a parameter.
 
 \lstinputlisting[caption=Reducer for changing categories]{code/cyto/categoryReducer.js}
 
 
-In short for each added component that needs access to the states a connector needs to be created. Actions and reducers also need to be created to change the state, if not already existing.
+In short, for each added component that needs access to the states a connector needs to be created. Actions and reducers also need to be created to change the state, if not already existing.
 
 The directory structure would now look like this:
 
@@ -276,7 +276,7 @@ The directory structure would now look like this:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{bilder/cyto/SystemArchitecture.png}
-	\caption{System architecture ovierview}
+	\caption{System architecture overview}
 	\label{fig:SystemOverview}
 \end{figure}
 
