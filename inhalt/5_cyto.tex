@@ -21,19 +21,19 @@ any data to a server. This helps both, privacy concerns as well as performance. 
 
 The workflow starts with the creation of categories. Each image to be classified will have to be assigned to a category.
 
-Now the images need to be made available to the application.
-They are being uploaded to the local browser cache.
-It is possible to select entire folders which will result in being all images in that folder and their sub-folders being uploaded.
-
-Once all images have been uploaded a knowledgeable user has
-to classify them by dragging them to the respective category field.
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{bilder/cyto/Ablaufdiagramm.png}
 	\caption{Workflow}
 	\label{fig:Workflow}
 \end{figure}
+
+Now the images need to be made available to the application.
+They are being uploaded to the local browser cache.
+It is possible to select entire folders which will result in being all images in that folder and their sub-folders being uploaded.
+
+Once all images have been uploaded a knowledgeable user has
+to classify them by dragging them to the respective category field.
 
 After sufficient samples haves been categorized the network
 can be trained. Depending the amount of images this can take more or less time. The training results in a trained network.
@@ -55,8 +55,11 @@ can be shared with others.
 \section{Working with CYIO AI}
 
 \subsection{Creating categories}
-By clicking on the add button it is possible to create a new
-category. In order to change a category, the category needs to be deleted, by clicking on the delete Icon and a new category needs to be created. Future versions will support the editing of an existing category so it will not be necessary anymore to delete a category in order to change the name.
+To add a category click on button A in figure \ref{fig:Category}. To delete a category click on the corresponding trash can symbol. 
+It is not possible right now to directly change a category.
+For changing a category you need to delete the old one and
+create a new one.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{bilder/cyto/categories.png}
@@ -65,7 +68,11 @@ category. In order to change a category, the category needs to be deleted, by cl
 \end{figure}
 
 \subsection{Uploading images}
-In order to upload images the upload image button can be clicked. In Chrome, Firefox it is possible to select 
+In order to upload images click on button A in figure \ref{fig:ImageUpload}.
+In Chrome and Firefox it is possible to select entire folders.
+All images have to be in the portable network graphics format (PNG).
+
+ the upload image button can be clicked. In Chrome, Firefox it is possible to select 
 whole folders. The picture must be in the portable network graphics format (PNG).
 
 \begin{figure}[H]
