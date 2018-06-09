@@ -242,7 +242,7 @@ the code changes. There is no need to clear the cache or reload the browser manu
 
 \section{System architecture overview}
 
-To explain the system structure we will walk through the process of adding a new component to the existing application.
+To explain the system structure we will walk through the process of adding a new component to the existing application. This component shall display a list of categories.
 
 \subsection{Adding a component}
 To add a new component "Categories" we create a file 
@@ -251,12 +251,13 @@ like listing \ref{lst:categories}.
 
 \lstinputlisting[caption=Categories component, label=lst:categories]{code/cyto/categoryList.js}
 
+The connector adds the possibility to access the categories array in the Redux store.
 
 
-The data shall be fetched from a variable categories that is
+The  shall be fetched from a variable categories that is
 placed in the Redux store.
 In order to fetch this data the component shall be connected to the Redux store so a High-Order Component ConnectedCategories is created.
-The connector adds the possibility to access the categories array in the Redux store.
+
 
 \lstinputlisting[caption=Connector component]{code/cyto/connectedCategory.js}
 
