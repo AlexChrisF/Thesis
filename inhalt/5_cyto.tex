@@ -214,7 +214,7 @@ it is possible to inspect rendered components and highlight DOM updates
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{bilder/cyto/ReactDebug.png}
+	\includegraphics[width=0.9\linewidth]{bilder/cyto/ReactDebug.png}
 	\caption{React developer tools}
 	\label{fig:Developer Tools}
 \end{figure}
@@ -224,14 +224,17 @@ the code changes. There is not need to empty the cash or reload the browser manu
 
 
 \subsection{System architecture overview}
-The following diagram shall give an overview of how responsibilities are distributed over the system.
+The following illustration shall give an overview of how responsibilities are distributed over the system.
+
+classifier.js is the machine learning API it holds all functionality needed for machine learning and classifying tasks.
+
 
 API contains all files and functionality needed for the machine learning classifying task. Folder src contains all components, tests and Redux related files. 
 In order to explain how this structure works a further component shall be added.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{bilder/cyto/SystemArchitecture.png}
+	\includegraphics[scale=0.5]{bilder/cyto/SystemArchitecture.png}
 	\caption{Architecture overview}
 	\label{fig:Overview}
 \end{figure}
