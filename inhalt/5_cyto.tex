@@ -248,51 +248,6 @@ A reducer will now be called given and the action will be passed to it.
 
 \lstinputlisting[caption=Reducer for changing categories]{code/cyto/categoryReducer.js}
 
-The structure will now look like this:
-
-\begin{forest}
-	for tree={
-		font=\ttfamily,
-		grow'=0,
-		child anchor=west,
-		parent anchor=south,
-		anchor=west,
-		calign=first,
-		inner xsep=7pt,
-		edge path={
-			\noexpand\path [draw, \forestoption{edge}]
-			(!u.south west) +(7.5pt,0) |- (.child anchor) pic {folder} \forestoption{edge label};
-		},
-		% style for your file node 
-		file/.style={edge path={\noexpand\path [draw, \forestoption{edge}]
-				(!u.south west) +(7.5pt,0) |- (.child anchor) \forestoption{edge label};},
-			inner xsep=2pt,font=\small\ttfamily
-		},
-		before typesetting nodes={
-			if n=1
-			{insert before={[,phantom]}}
-			{}
-		},
-		fit=band,
-		before computing xy={l=15pt},
-	}  
-	[system
-	[config
-	]
-	[lib
-	[Access
-	]
-	[Plugin
-	]
-	[file.txt,file
-	]
-	]
-	[templates
-	]
-	[tests
-	]
-	]
-\end{forest}
 
 In short for each added component that needs access to the states a connector needs to be created. Actions and reducers also need to be created to change the state, if not already existing.
 
